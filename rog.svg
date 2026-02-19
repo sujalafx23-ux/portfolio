@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 900">
+  <!-- ROG Republic of Gamers Logo -->
+  <!-- The ROG slash/blade icon -->
+  <g transform="translate(180, 40)">
+    <!-- Main large blade/wing shape -->
+    <path d="M330,20 C380,20 490,60 560,140 L700,340 C720,370 710,410 680,420 L580,440 C560,445 540,430 530,410 L440,240 L200,460 L120,380 Z" fill="#FF0000"/>
+    <!-- Secondary smaller wing -->
+    <path d="M120,380 L200,460 L80,580 L20,500 Z" fill="#FF0000"/>
+    <!-- Third accent blade -->
+    <path d="M200,460 L280,540 L160,620 L80,580 Z" fill="#FF0000"/>
+    <!-- White highlight cutouts -->
+    <path d="M400,120 C440,140 500,180 540,240 L600,340 L560,360 L480,220 C440,160 380,130 340,120 Z" fill="white" opacity="0.3"/>
+    <path d="M460,240 C480,260 510,300 530,340 L490,360 L460,300 Z" fill="white" opacity="0.3"/>
+  </g>
+  <!-- REPUBLIC OF GAMERS text -->
+  <text x="512" y="720" font-family="Arial Black, sans-serif" font-size="82" font-weight="900" fill="#FF0000" text-anchor="middle" letter-spacing="4">REPUBLIC OF</text>
+  <text x="512" y="820" font-family="Arial Black, sans-serif" font-size="82" font-weight="900" fill="#FF0000" text-anchor="middle" letter-spacing="6">GAMERS</text>
+</svg>

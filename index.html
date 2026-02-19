@@ -1,0 +1,5001 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description"
+    content="Sujal Kumar — Senior Video Editor, Motion Designer & 3D Artist. Working with ASUS India & Qualcomm. Based in Jaipur, India.">
+  <meta name="keywords"
+    content="Sujal Kumar, Video Editor, Motion Designer, ASUS India, Qualcomm, Jaipur, After Effects, Premiere Pro, Blender">
+  <meta property="og:title" content="Sujal Kumar — Senior Video Editor & Motion Designer">
+  <meta property="og:description" content="Cinematic portfolio — 3+ years crafting stories for global tech brands.">
+  <meta property="og:type" content="website">
+  <title>SUJAL KUMAR — Senior Video Editor & Motion Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Exo+2:ital,wght@0,100;0,300;0,400;0,600;0,700;0,900;1,300;1,400&family=JetBrains+Mono:wght@300;400;700&family=Cinzel:wght@400;700;900&display=swap"
+    rel="stylesheet">
+  <style>
+    /* =============================================
+   GLOBAL RESET & VARIABLES
+============================================= */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --void: #020509;
+      --deep: #060d16;
+      --card: rgba(8, 18, 30, 0.85);
+      --c1: #00e5ff;
+      --c2: #ff6b00;
+      --c3: #7c3aed;
+      --c4: #00ff87;
+      --gold: #d4a853;
+      --silver: #8ba3bc;
+      --white: #eaf4ff;
+      --dim: #3a5a78;
+      --font-hero: 'Bebas Neue', cursive;
+      --font-body: 'Exo 2', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-serif: 'Cinzel', serif;
+      --max-w: 1200px;
+      --pad: clamp(16px, 5vw, 80px);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--void);
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--white);
+      background: var(--void);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: var(--font-body);
+      cursor: pointer;
+    }
+
+    ::selection {
+      background: rgba(0, 229, 255, .25);
+      color: var(--white);
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--void);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--c1);
+      border-radius: 2px;
+    }
+
+    /* =============================================
+   CANVAS & BACKGROUND
+============================================= */
+    #bgCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .ov-vignette {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 40%, rgba(2, 5, 9, .8) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .ov-scan {
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0, 0, 0, .07) 3px, rgba(0, 0, 0, .07) 4px);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* =============================================
+   NAVBAR
+============================================= */
+    #navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      transition: all .4s;
+    }
+
+    #navbar.scrolled {
+      background: rgba(2, 5, 9, .95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0, 229, 255, .08);
+    }
+
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--font-hero);
+      font-size: 22px;
+      letter-spacing: 3px;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-logo span {
+      color: var(--c1);
+    }
+
+    .nav-dot-logo {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--c1);
+      box-shadow: 0 0 12px var(--c1);
+      animation: logoPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes logoPulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 8px var(--c1);
+      }
+
+      50% {
+        box-shadow: 0 0 20px var(--c1), 0 0 40px rgba(0, 229, 255, .3);
+      }
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--dim);
+      text-transform: uppercase;
+      transition: color .3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--c1);
+    }
+
+    .nav-cta {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 3px;
+      padding: 8px 20px;
+      border: 1px solid rgba(0, 229, 255, .4);
+      color: var(--c1);
+      text-transform: uppercase;
+      transition: all .3s;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      background: var(--c1);
+      color: var(--void);
+    }
+
+    .nav-mobile-btn {
+      display: none;
+      background: none;
+      border: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+    }
+
+    .nav-mobile-btn span {
+      width: 24px;
+      height: 1.5px;
+      background: var(--c1);
+      transition: all .3s;
+      display: block;
+    }
+
+    .nav-mobile-btn.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav-mobile-btn.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-mobile-btn.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .nav-mobile-menu {
+      display: none;
+      position: fixed;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background: rgba(2, 5, 9, .98);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0, 229, 255, .1);
+      padding: 24px var(--pad);
+      flex-direction: column;
+      gap: 20px;
+      z-index: 99;
+    }
+
+    .nav-mobile-menu.open {
+      display: flex;
+    }
+
+    .nav-mobile-menu a {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--dim);
+      text-transform: uppercase;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .04);
+      transition: color .3s;
+    }
+
+    .nav-mobile-menu a:hover {
+      color: var(--c1);
+    }
+
+    /* =============================================
+   SECTION BASE
+============================================= */
+    section {
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 100px var(--pad);
+    }
+
+    .section-tag {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 6px;
+      color: var(--c1);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .section-tag::after {
+      content: '';
+      flex: 1;
+      max-width: 60px;
+      height: 1px;
+      background: var(--c1);
+    }
+
+    .section-title {
+      font-family: var(--font-hero);
+      font-size: clamp(40px, 7vw, 90px);
+      letter-spacing: 3px;
+      line-height: .95;
+      color: var(--white);
+    }
+
+    .section-title span {
+      color: var(--c1);
+    }
+
+    .section-sub {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 4px;
+      color: var(--dim);
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+
+    .divider-line {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--c1), var(--c2));
+      margin: 20px 0;
+    }
+
+    /* =============================================
+   HERO SECTION
+============================================= */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 120px var(--pad) 80px;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 8px;
+      color: var(--c1);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp .8s ease forwards .2s;
+    }
+
+    .hero-name {
+      font-family: var(--font-hero);
+      font-size: clamp(56px, 14vw, 180px);
+      letter-spacing: 2px;
+      line-height: .88;
+      background: linear-gradient(135deg, #fff 0%, var(--c1) 35%, #fff 65%, var(--gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      background-size: 300% 300%;
+      animation: heroReveal 1s cubic-bezier(.2, 0, 0, 1) forwards .5s, gradAnim 6s ease infinite 2s;
+      opacity: 0;
+    }
+
+    @keyframes heroReveal {
+      from {
+        opacity: 0;
+        letter-spacing: 20px;
+      }
+
+      to {
+        opacity: 1;
+        letter-spacing: 2px;
+      }
+    }
+
+    @keyframes gradAnim {
+
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    .hero-title-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 20px 0;
+      opacity: 0;
+      animation: fadeUp .8s ease forwards 1.1s;
+    }
+
+    .hero-title-item {
+      font-family: var(--font-serif);
+      font-size: clamp(11px, 1.5vw, 16px);
+      letter-spacing: 5px;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    .hero-title-sep {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--c1);
+      box-shadow: 0 0 8px var(--c1);
+    }
+
+    .hero-desc {
+      font-size: clamp(14px, 1.5vw, 17px);
+      color: rgba(234, 244, 255, .55);
+      max-width: 560px;
+      line-height: 1.8;
+      margin-bottom: 36px;
+      opacity: 0;
+      animation: fadeUp .8s ease forwards 1.3s;
+    }
+
+    .hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 44px;
+      opacity: 0;
+      animation: fadeUp .8s ease forwards 1.5s;
+    }
+
+    .chip {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 3px;
+      color: var(--silver);
+      border: 1px solid rgba(255, 255, 255, .1);
+      padding: 6px 14px;
+      text-transform: uppercase;
+      transition: all .3s;
+    }
+
+    .chip:hover,
+    .chip.highlight {
+      border-color: rgba(0, 229, 255, .4);
+      color: var(--c1);
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      opacity: 0;
+      animation: fadeUp .8s ease forwards 1.7s;
+    }
+
+    .btn-primary {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 3px;
+      padding: 14px 32px;
+      background: transparent;
+      border: 1px solid var(--c1);
+      color: var(--c1);
+      text-transform: uppercase;
+      transition: all .35s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--c1);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .35s;
+    }
+
+    .btn-primary:hover::before {
+      transform: scaleX(1);
+    }
+
+    .btn-primary:hover {
+      color: var(--void);
+    }
+
+    .btn-primary span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-secondary {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 3px;
+      padding: 14px 32px;
+      border: 1px solid rgba(255, 255, 255, .12);
+      color: var(--silver);
+      text-transform: uppercase;
+      transition: all .35s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--c2);
+      color: var(--c2);
+    }
+
+    .hero-stats {
+      position: absolute;
+      right: var(--pad);
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards 2s;
+    }
+
+    .hero-stat {
+      text-align: right;
+    }
+
+    .hs-num {
+      font-family: var(--font-hero);
+      font-size: clamp(32px, 4vw, 52px);
+      color: var(--c1);
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+
+    .hs-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 3px;
+      color: var(--dim);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 4px;
+      color: var(--dim);
+      opacity: 0;
+      animation: fadeIn 1s ease forwards 2.5s;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(180deg, var(--c1), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scaleY(1);
+      }
+
+      50% {
+        opacity: .4;
+        transform: scaleY(.6);
+      }
+    }
+
+    /* =============================================
+   ABOUT ME BAND
+============================================= */
+    #about-band {
+      background: linear-gradient(90deg, rgba(0, 229, 255, .04), transparent, rgba(255, 107, 0, .04));
+      border-top: 1px solid rgba(255, 255, 255, .04);
+      border-bottom: 1px solid rgba(255, 255, 255, .04);
+    }
+
+    .band-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 40px var(--pad);
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 32px;
+    }
+
+    .band-item {
+      text-align: center;
+    }
+
+    .bi-icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .bi-title {
+      font-family: var(--font-hero);
+      font-size: 22px;
+      letter-spacing: 2px;
+      color: var(--white);
+    }
+
+    .bi-sub {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 3px;
+      color: var(--dim);
+    }
+
+    /* =============================================
+   REEL / SHOWREEL
+============================================= */
+    #reel {
+      background: var(--void);
+    }
+
+    .reel-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .reel-screen {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #030810;
+      border: 1px solid rgba(0, 229, 255, .12);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 60px rgba(0, 229, 255, .06);
+    }
+
+    .rs {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity .6s;
+    }
+
+    .rs.vis {
+      opacity: 1;
+    }
+
+    .rs-scan {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(0, 229, 255, .5), transparent);
+      animation: rsScan 3s linear infinite;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    @keyframes rsScan {
+      0% {
+        top: -5%;
+      }
+
+      100% {
+        top: 105%;
+      }
+    }
+
+    .rs-grid {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(0, 229, 255, .04) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 229, 255, .04) 1px, transparent 1px);
+      background-size: 44px 44px;
+      animation: gridMove 5s linear infinite;
+    }
+
+    @keyframes gridMove {
+      to {
+        background-position: 44px 44px;
+      }
+    }
+
+    .rs-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .rsc-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 6px;
+      color: var(--dim);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .rsc-title {
+      font-family: var(--font-hero);
+      font-size: clamp(20px, 5vw, 64px);
+      letter-spacing: 4px;
+    }
+
+    .rsc-sub {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 4px;
+      color: var(--dim);
+      margin-top: 8px;
+    }
+
+    /* scene bg variants */
+    .rs1-bg {
+      background: radial-gradient(ellipse at 25% 60%, rgba(0, 102, 255, .12), transparent 55%), radial-gradient(ellipse at 75% 30%, rgba(124, 58, 237, .1), transparent 50%), #030810;
+    }
+
+    .rs2-bg {
+      background: radial-gradient(ellipse at center, rgba(255, 107, 0, .07), transparent 60%), #020810;
+    }
+
+    .rs3-bg {
+      background: #020810;
+    }
+
+    .rs4-bg {
+      background: radial-gradient(ellipse at 70% 50%, rgba(0, 255, 135, .06), transparent 60%), #020810;
+    }
+
+    .rs5-bg {
+      background: radial-gradient(ellipse at center, rgba(212, 168, 83, .06), transparent 60%), #020810;
+    }
+
+    /* speed lines */
+    .speed-lines-wrap {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .sl {
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      background: linear-gradient(90deg, transparent, var(--c2), transparent);
+      animation: slAnim .5s ease-out infinite;
+      opacity: 0;
+    }
+
+    @keyframes slAnim {
+      0% {
+        opacity: 0;
+        transform: scaleX(0) translateX(-50%);
+      }
+
+      40% {
+        opacity: .7;
+      }
+
+      100% {
+        opacity: 0;
+        transform: scaleX(1) translateX(100%);
+      }
+    }
+
+    /* glitch */
+    .glitch {
+      font-family: var(--font-hero);
+      font-size: clamp(22px, 5vw, 64px);
+      letter-spacing: 5px;
+      position: relative;
+      color: var(--white);
+    }
+
+    .glitch::before {
+      content: attr(data-t);
+      position: absolute;
+      inset: 0;
+      color: var(--c1);
+      clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+      animation: gA 2.5s infinite;
+    }
+
+    .glitch::after {
+      content: attr(data-t);
+      position: absolute;
+      inset: 0;
+      color: var(--c2);
+      clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+      animation: gB 2.5s infinite;
+    }
+
+    @keyframes gA {
+
+      0%,
+      88%,
+      100% {
+        transform: none;
+        opacity: 0;
+      }
+
+      89% {
+        transform: translateX(-4px);
+        opacity: 1;
+      }
+
+      93% {
+        transform: translateX(3px);
+        opacity: 1;
+      }
+
+      97% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes gB {
+
+      0%,
+      91%,
+      100% {
+        transform: none;
+        opacity: 0;
+      }
+
+      92% {
+        transform: translateX(5px);
+        opacity: 1;
+      }
+
+      96% {
+        transform: translateX(-3px);
+        opacity: 1;
+      }
+
+      99% {
+        opacity: 0;
+      }
+    }
+
+    /* color bars */
+    .color-bars-row {
+      display: flex;
+      gap: 3px;
+      width: 75%;
+      height: 50px;
+    }
+
+    .cb {
+      flex: 1;
+      border-radius: 1px;
+    }
+
+    .reel-player-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+
+    .rpb-btn {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--dim);
+      background: none;
+      border: none;
+      transition: color .3s;
+      padding: 4px 6px;
+    }
+
+    .rpb-btn:hover {
+      color: var(--c1);
+    }
+
+    .rpb-timeline {
+      flex: 1;
+      min-width: 80px;
+      height: 3px;
+      background: rgba(255, 255, 255, .06);
+      border-radius: 2px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .rpb-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      background: linear-gradient(90deg, var(--c3), var(--c1), var(--c4));
+      border-radius: 2px;
+      box-shadow: 0 0 8px var(--c1);
+      transition: width .15s;
+    }
+
+    .rpb-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      color: var(--c1);
+      white-space: nowrap;
+      letter-spacing: 2px;
+    }
+
+    .rpb-time {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      color: var(--dim);
+      white-space: nowrap;
+    }
+
+    /* =============================================
+   SKILLS
+============================================= */
+    #skills {
+      background: linear-gradient(180deg, var(--void), rgba(6, 13, 22, .6), var(--void));
+    }
+
+    .skills-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-top: 48px;
+    }
+
+    .sk-group-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 5px;
+      color: var(--c2);
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(255, 107, 0, .2);
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .skill-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .sk-icon-box {
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(0, 229, 255, .12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 18px;
+      background: rgba(0, 229, 255, .03);
+      transition: border-color .3s;
+    }
+
+    .skill-row:hover .sk-icon-box {
+      border-color: rgba(0, 229, 255, .4);
+    }
+
+    .sk-info {
+      flex: 1;
+    }
+
+    .sk-name {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--white);
+      text-transform: uppercase;
+    }
+
+    .sk-sub {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 2px;
+      color: var(--dim);
+      margin-top: 1px;
+    }
+
+    .sk-bar {
+      margin-top: 7px;
+      height: 2px;
+      background: rgba(255, 255, 255, .05);
+    }
+
+    .sk-fill {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--c3), var(--c1));
+      box-shadow: 0 0 6px rgba(0, 229, 255, .5);
+      transition: width 1.5s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .sk-pct {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      color: var(--c1);
+      white-space: nowrap;
+      min-width: 32px;
+      text-align: right;
+    }
+
+    /* software logos grid */
+    .software-grid {
+      margin-top: 48px;
+    }
+
+    .sw-grid-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 5px;
+      color: var(--dim);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .sw-logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .sw-logo-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 12px;
+      border: 1px solid rgba(255, 255, 255, .06);
+      background: rgba(8, 18, 30, .6);
+      width: 80px;
+      transition: all .3s;
+      cursor: default;
+    }
+
+    .sw-logo-card:hover {
+      border-color: rgba(0, 229, 255, .25);
+      transform: translateY(-2px);
+    }
+
+    .sw-logo-card svg,
+    .sw-logo-card img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+
+    .sw-logo-name {
+      font-family: var(--font-mono);
+      font-size: 7px;
+      letter-spacing: 1px;
+      color: var(--dim);
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    /* =============================================
+   EXPERIENCE
+============================================= */
+    .exp-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      margin-top: 48px;
+      position: relative;
+      padding-left: 32px;
+    }
+
+    .exp-grid::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg, var(--c1), var(--c2), var(--c3), transparent);
+    }
+
+    .exp-card {
+      position: relative;
+      margin-bottom: 44px;
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, .06);
+      padding: 28px 28px 24px;
+      backdrop-filter: blur(8px);
+      transition: border-color .3s;
+    }
+
+    .exp-card::before {
+      content: '';
+      position: absolute;
+      left: -40px;
+      top: 28px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      box-shadow: 0 0 20px currentColor;
+    }
+
+    .exp-card:nth-child(1)::before {
+      background: var(--c1);
+      color: var(--c1);
+      border: 2px solid var(--deep);
+    }
+
+    .exp-card:nth-child(2)::before {
+      background: var(--c2);
+      color: var(--c2);
+      border: 2px solid var(--deep);
+    }
+
+    .exp-card:nth-child(3)::before {
+      background: var(--c3);
+      color: var(--c3);
+      border: 2px solid var(--deep);
+    }
+
+    .exp-card:hover {
+      border-color: rgba(0, 229, 255, .2);
+    }
+
+    .exp-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .exp-company-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .exp-co-logo {
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(255, 255, 255, .08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: rgba(255, 255, 255, .03);
+    }
+
+    .exp-company {
+      font-family: var(--font-hero);
+      font-size: clamp(18px, 3vw, 28px);
+      letter-spacing: 3px;
+    }
+
+    .exp-badge {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 2px;
+      padding: 3px 10px;
+      text-transform: uppercase;
+    }
+
+    .badge-current {
+      background: rgba(0, 229, 255, .1);
+      color: var(--c1);
+      border: 1px solid rgba(0, 229, 255, .25);
+    }
+
+    .badge-global {
+      background: rgba(255, 107, 0, .1);
+      color: var(--c2);
+      border: 1px solid rgba(255, 107, 0, .25);
+    }
+
+    .badge-freelance {
+      background: rgba(124, 58, 237, .1);
+      color: var(--c3);
+      border: 1px solid rgba(124, 58, 237, .25);
+    }
+
+    .exp-period {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 3px;
+      color: var(--dim);
+      white-space: nowrap;
+    }
+
+    .exp-role {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .exp-desc {
+      font-size: 13px;
+      color: rgba(234, 244, 255, .55);
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    .exp-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .etag {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 2px;
+      color: rgba(139, 163, 188, .7);
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid rgba(255, 255, 255, .06);
+      padding: 3px 10px;
+      text-transform: uppercase;
+    }
+
+    /* Stats row */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .stat-box {
+      background: var(--card);
+      border: 1px solid rgba(0, 229, 255, .1);
+      padding: 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--c1), transparent);
+    }
+
+    .stat-num {
+      font-family: var(--font-hero);
+      font-size: clamp(28px, 5vw, 52px);
+      color: var(--c1);
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+
+    .stat-unit {
+      font-family: var(--font-hero);
+      font-size: 20px;
+      color: var(--c2);
+    }
+
+    .stat-lbl {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 3px;
+      color: var(--dim);
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    /* =============================================
+   BRANDS / CLIENTS
+============================================= */
+    #brands {
+      background: linear-gradient(180deg, var(--void), rgba(6, 13, 22, .4), var(--void));
+    }
+
+    .brands-ticker-wrap {
+      overflow: hidden;
+      border-top: 1px solid rgba(0, 229, 255, .06);
+      border-bottom: 1px solid rgba(0, 229, 255, .06);
+      padding: 20px 0;
+      margin: 32px 0;
+      position: relative;
+    }
+
+    .brands-ticker-wrap::before,
+    .brands-ticker-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      z-index: 2;
+    }
+
+    .brands-ticker-wrap::before {
+      left: 0;
+      background: linear-gradient(90deg, var(--void), transparent);
+    }
+
+    .brands-ticker-wrap::after {
+      right: 0;
+      background: linear-gradient(270deg, var(--void), transparent);
+    }
+
+    .ticker-track {
+      display: flex;
+      gap: 64px;
+      animation: ticker 18s linear infinite;
+      width: max-content;
+    }
+
+    .ticker-item {
+      font-family: var(--font-hero);
+      font-size: 20px;
+      letter-spacing: 4px;
+      color: rgba(234, 244, 255, .15);
+      text-transform: uppercase;
+      white-space: nowrap;
+      transition: color .3s;
+    }
+
+    .ticker-item:hover {
+      color: var(--c1);
+    }
+
+    @keyframes ticker {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* project cards */
+    .proj-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .proj-card {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, .06);
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+      transition: all .3s;
+      cursor: default;
+    }
+
+    .proj-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--c3), var(--c1));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .4s;
+    }
+
+    .proj-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .proj-card:hover {
+      border-color: rgba(0, 229, 255, .15);
+      transform: translateY(-3px);
+    }
+
+    .proj-type {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 3px;
+      color: var(--c1);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .proj-name {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .proj-co {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 2px;
+      color: var(--dim);
+    }
+
+    .proj-metric {
+      font-family: var(--font-hero);
+      font-size: clamp(24px, 3vw, 38px);
+      color: var(--c1);
+      margin-top: 14px;
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+
+    .proj-metric-lbl {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 2px;
+      color: var(--dim);
+    }
+
+    /* =============================================
+   AI / ML SECTION
+============================================= */
+    #aiml {
+      background: linear-gradient(135deg, rgba(124, 58, 237, .04), rgba(0, 229, 255, .02), rgba(0, 255, 135, .03));
+    }
+
+    .aiml-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+      margin-top: 48px;
+    }
+
+    .aiml-cert-card {
+      background: var(--card);
+      border: 1px solid rgba(124, 58, 237, .25);
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .aiml-cert-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--c3), var(--c1));
+    }
+
+    .cert-logo-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .cert-org-logo {
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(124, 58, 237, .2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(124, 58, 237, .06);
+    }
+
+    .cert-title {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--white);
+    }
+
+    .cert-org {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 3px;
+      color: var(--c3);
+    }
+
+    .cert-desc {
+      font-size: 12px;
+      color: rgba(234, 244, 255, .5);
+      line-height: 1.7;
+    }
+
+    .cert-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 2px;
+      padding: 4px 12px;
+      background: rgba(0, 255, 135, .08);
+      border: 1px solid rgba(0, 255, 135, .2);
+      color: var(--c4);
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+
+    .cert-badge-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--c4);
+    }
+
+    .aiml-skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .aiml-skill-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 16px;
+      background: rgba(0, 0, 0, .2);
+      border: 1px solid rgba(255, 255, 255, .05);
+      transition: border-color .3s;
+    }
+
+    .aiml-skill-item:hover {
+      border-color: rgba(124, 58, 237, .3);
+    }
+
+    .aiml-icon {
+      font-size: 22px;
+      width: 40px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .aiml-name {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--white);
+    }
+
+    .aiml-sub {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 2px;
+      color: var(--dim);
+      margin-top: 2px;
+    }
+
+    .aiml-tag {
+      margin-left: auto;
+      font-family: var(--font-mono);
+      font-size: 7px;
+      letter-spacing: 2px;
+      padding: 2px 8px;
+      text-transform: uppercase;
+      border: 1px solid;
+      flex-shrink: 0;
+    }
+
+    .tag-pro {
+      border-color: rgba(0, 229, 255, .3);
+      color: var(--c1);
+    }
+
+    .tag-learn {
+      border-color: rgba(212, 168, 83, .3);
+      color: var(--gold);
+    }
+
+    .tag-cert {
+      border-color: rgba(0, 255, 135, .3);
+      color: var(--c4);
+    }
+
+    /* =============================================
+   GEAR SECTION
+============================================= */
+    #gear {
+      background: linear-gradient(180deg, var(--void), rgba(10, 5, 25, .6), var(--void));
+    }
+
+    .gear-header-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+
+    .pc-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 3px;
+      color: var(--c4);
+      border: 1px solid rgba(0, 255, 135, .2);
+      padding: 8px 16px;
+      text-transform: uppercase;
+    }
+
+    .pc-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--c4);
+      animation: pcPulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pcPulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 4px var(--c4);
+      }
+
+      50% {
+        box-shadow: 0 0 14px var(--c4), 0 0 28px rgba(0, 255, 135, .2);
+      }
+    }
+
+    /* PC visual */
+    .pc-visual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .pc-tower {
+      background: linear-gradient(145deg, rgba(10, 20, 40, .9), rgba(5, 10, 20, .95));
+      border: 1px solid rgba(0, 229, 255, .15);
+      padding: 32px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pc-tower::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(0, 229, 255, .02) 20px, rgba(0, 229, 255, .02) 21px);
+    }
+
+    .pc-tower-header {
+      font-family: var(--font-hero);
+      font-size: 28px;
+      letter-spacing: 4px;
+      color: var(--c1);
+      margin-bottom: 4px;
+    }
+
+    .pc-tower-sub {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 4px;
+      color: var(--dim);
+      margin-bottom: 28px;
+    }
+
+    .pc-led-row {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+
+    .led {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .led-r {
+      background: #ff0040;
+      box-shadow: 0 0 8px #ff0040;
+    }
+
+    .led-g {
+      background: var(--c4);
+      box-shadow: 0 0 8px var(--c4);
+    }
+
+    .led-b {
+      background: var(--c1);
+      box-shadow: 0 0 8px var(--c1);
+    }
+
+    .led-p {
+      background: var(--c3);
+      box-shadow: 0 0 8px var(--c3);
+    }
+
+    .pc-vent-row {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 24px;
+    }
+
+    .vent {
+      width: 4px;
+      height: 40px;
+      background: rgba(0, 229, 255, .15);
+      border-radius: 2px;
+    }
+
+    .spec-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .spec-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 14px;
+      background: rgba(0, 0, 0, .3);
+      border: 1px solid rgba(255, 255, 255, .05);
+      transition: all .3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .spec-item:hover {
+      border-color: rgba(0, 229, 255, .2);
+      background: rgba(0, 229, 255, .03);
+    }
+
+    .spec-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--c1);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform .3s;
+    }
+
+    .spec-item:hover::before {
+      transform: scaleY(1);
+    }
+
+    .spec-logo {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 1px solid rgba(255, 255, 255, .06);
+      background: rgba(255, 255, 255, .02);
+    }
+
+    .spec-logo svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .spec-info {
+      flex: 1;
+    }
+
+    .spec-category {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 3px;
+      color: var(--dim);
+      text-transform: uppercase;
+    }
+
+    .spec-name {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--white);
+      margin-top: 2px;
+    }
+
+    .spec-detail {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 1px;
+      color: var(--silver);
+      margin-top: 2px;
+    }
+
+    .spec-badge {
+      font-family: var(--font-mono);
+      font-size: 7px;
+      letter-spacing: 2px;
+      padding: 3px 8px;
+      text-transform: uppercase;
+      margin-left: auto;
+      flex-shrink: 0;
+      border: 1px solid;
+    }
+
+    .sb-green {
+      border-color: rgba(0, 255, 135, .3);
+      color: var(--c4);
+    }
+
+    .sb-orange {
+      border-color: rgba(255, 107, 0, .3);
+      color: var(--c2);
+    }
+
+    .sb-cyan {
+      border-color: rgba(0, 229, 255, .3);
+      color: var(--c1);
+    }
+
+    .sb-purple {
+      border-color: rgba(124, 58, 237, .3);
+      color: var(--c3);
+    }
+
+    /* Benchmark bars */
+    .benchmark-section {
+      margin-top: 32px;
+    }
+
+    .bm-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 4px;
+      color: var(--dim);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .bm-row {
+      margin-bottom: 14px;
+    }
+
+    .bm-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+
+    .bm-name {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: var(--silver);
+    }
+
+    .bm-score {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      color: var(--c1);
+    }
+
+    .bm-bar {
+      height: 4px;
+      background: rgba(255, 255, 255, .05);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .bm-fill {
+      height: 100%;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--c3), var(--c1));
+      box-shadow: 0 0 6px rgba(0, 229, 255, .4);
+      width: 0;
+      transition: width 1.5s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    /* =============================================
+   AWARDS / ABOUT
+============================================= */
+    #about {
+      background: linear-gradient(180deg, var(--void), rgba(6, 13, 22, .5), var(--void));
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+      margin-top: 48px;
+    }
+
+    .about-bio {
+      font-size: 14px;
+      color: rgba(234, 244, 255, .55);
+      line-height: 1.9;
+      margin-bottom: 24px;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--silver);
+      transition: color .3s;
+    }
+
+    .contact-row:hover {
+      color: var(--c1);
+    }
+
+    .contact-row-icon {
+      font-size: 14px;
+      width: 24px;
+      text-align: center;
+    }
+
+    .awards-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .award-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .04);
+    }
+
+    .award-num {
+      font-family: var(--font-hero);
+      font-size: 36px;
+      color: rgba(0, 229, 255, .12);
+      line-height: 1;
+      width: 40px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .award-info {
+      flex: 1;
+    }
+
+    .award-name {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--white);
+    }
+
+    .award-event {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 2px;
+      color: var(--dim);
+      margin-top: 2px;
+    }
+
+    .award-level {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 1px;
+      padding: 3px 8px;
+      border: 1px solid;
+      flex-shrink: 0;
+    }
+
+    .al-gold {
+      border-color: rgba(212, 168, 83, .4);
+      color: var(--gold);
+    }
+
+    .al-silver {
+      border-color: rgba(139, 163, 188, .3);
+      color: var(--silver);
+    }
+
+    .quote-box {
+      margin-top: 28px;
+      padding: 24px;
+      border: 1px solid rgba(0, 229, 255, .1);
+      background: rgba(0, 229, 255, .02);
+      position: relative;
+    }
+
+    .quote-box::before {
+      content: '"';
+      position: absolute;
+      top: -24px;
+      left: 20px;
+      font-family: var(--font-hero);
+      font-size: 80px;
+      color: rgba(0, 229, 255, .1);
+      line-height: 1;
+    }
+
+    .quote-text {
+      font-style: italic;
+      font-size: 13px;
+      color: rgba(234, 244, 255, .45);
+      line-height: 1.8;
+    }
+
+    .quote-attr {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 3px;
+      color: var(--c1);
+      text-transform: uppercase;
+      margin-top: 12px;
+    }
+
+    /* =============================================
+   PROCESS
+============================================= */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+      position: relative;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 30px;
+      left: 8%;
+      right: 8%;
+      height: 1px;
+      background: linear-gradient(90deg, var(--c3), var(--c1), var(--c2), var(--c4));
+      z-index: 0;
+      opacity: .3;
+    }
+
+    .ps-item {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .ps-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-family: var(--font-hero);
+      font-size: 22px;
+      background: var(--void);
+    }
+
+    .psc1 {
+      border-color: var(--c3);
+      color: var(--c3);
+    }
+
+    .psc2 {
+      border-color: var(--c1);
+      color: var(--c1);
+    }
+
+    .psc3 {
+      border-color: var(--c2);
+      color: var(--c2);
+    }
+
+    .psc4 {
+      border-color: var(--c4);
+      color: var(--c4);
+    }
+
+    .psc5 {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .ps-name {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--white);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .ps-desc {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 1px;
+      color: var(--dim);
+      line-height: 1.6;
+    }
+
+    /* =============================================
+   OUTRO / CONTACT CTA
+============================================= */
+    #contact {
+      background: linear-gradient(180deg, var(--void), rgba(0, 5, 15, .8));
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .contact-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 100px var(--pad);
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+
+    .contact-rings {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .cring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-radius: 50%;
+      border: 1px solid;
+      transform: translate(-50%, -50%);
+      animation: ringRotate linear infinite;
+    }
+
+    .cr1 {
+      width: 300px;
+      height: 300px;
+      border-color: rgba(0, 229, 255, .06);
+      animation-duration: 25s;
+    }
+
+    .cr2 {
+      width: 500px;
+      height: 500px;
+      border-color: rgba(255, 107, 0, .04);
+      animation-duration: 40s;
+      animation-direction: reverse;
+    }
+
+    .cr3 {
+      width: 700px;
+      height: 700px;
+      border-color: rgba(124, 58, 237, .03);
+      animation-duration: 60s;
+    }
+
+    @keyframes ringRotate {
+      to {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+
+    .open-for-work {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 3px;
+      color: var(--c4);
+      border: 1px solid rgba(0, 255, 135, .2);
+      padding: 8px 18px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .ofw-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--c4);
+      animation: pcPulse 1.5s infinite;
+    }
+
+    .contact-name {
+      font-family: var(--font-hero);
+      font-size: clamp(52px, 10vw, 130px);
+      letter-spacing: 4px;
+      line-height: .9;
+      background: linear-gradient(135deg, var(--white) 0%, var(--c1) 30%, var(--gold) 65%, var(--white) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .contact-div {
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--c1), var(--c2), transparent);
+      margin: 28px auto;
+      animation: divExpand 1s ease forwards 0s;
+    }
+
+    @keyframes divExpand {
+      to {
+        width: min(400px, 80%);
+      }
+    }
+
+    .contact-roles {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .crole {
+      font-family: var(--font-serif);
+      font-size: clamp(11px, 1.5vw, 16px);
+      letter-spacing: 5px;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    .cdot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--c1);
+      box-shadow: 0 0 8px var(--c1);
+    }
+
+    .contact-tagline {
+      font-size: 14px;
+      font-style: italic;
+      color: rgba(234, 244, 255, .3);
+      letter-spacing: 2px;
+      margin-bottom: 40px;
+    }
+
+    .contact-btns {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .contact-info-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .ci-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: var(--dim);
+    }
+
+    .ci-item-icon {
+      font-size: 14px;
+    }
+
+    /* =============================================
+   FOOTER
+============================================= */
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, .04);
+      padding: 24px var(--pad);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 3px;
+      color: var(--dim);
+    }
+
+    .footer-copy span {
+      color: var(--c1);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 3px;
+      color: var(--dim);
+      transition: color .3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--c1);
+    }
+
+    /* =============================================
+   SCROLL REVEAL ANIMATION CLASSES
+============================================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(.9);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal-scale.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .delay-1 {
+      transition-delay: .1s !important;
+    }
+
+    .delay-2 {
+      transition-delay: .2s !important;
+    }
+
+    .delay-3 {
+      transition-delay: .3s !important;
+    }
+
+    .delay-4 {
+      transition-delay: .4s !important;
+    }
+
+    .delay-5 {
+      transition-delay: .5s !important;
+    }
+
+    .delay-6 {
+      transition-delay: .6s !important;
+    }
+
+    /* =============================================
+   RESPONSIVE BREAKPOINTS
+============================================= */
+    @media(max-width:1024px) {
+      .hero-stats {
+        display: none;
+      }
+
+      .skills-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .aiml-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .about-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .pc-visual {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width:768px) {
+
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .nav-mobile-btn {
+        display: flex;
+      }
+
+      .band-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .proj-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stats-row {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+
+      .process-steps::before {
+        display: none;
+      }
+
+      .section-inner {
+        padding: 70px var(--pad);
+      }
+    }
+
+    @media(max-width:480px) {
+      .hero-name {
+        font-size: clamp(48px, 16vw, 120px);
+      }
+
+      .proj-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-row {
+        grid-template-columns: 1fr;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+      }
+
+      .contact-btns {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .sw-logos {
+        justify-content: center;
+      }
+
+      .hero-title-row {
+        justify-content: center;
+      }
+    }
+
+    /* =============================================
+   GAMING SECTION
+============================================= */
+    #gaming {
+      background: linear-gradient(180deg, var(--void), rgba(255, 50, 50, .04), rgba(124, 58, 237, .04), var(--void));
+    }
+
+    .gaming-header-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+
+    .gaming-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 3px;
+      color: #ff4444;
+      border: 1px solid rgba(255, 68, 68, .3);
+      padding: 8px 16px;
+      text-transform: uppercase;
+    }
+
+    .gaming-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #ff4444;
+      animation: gamePulse 1s ease-in-out infinite;
+    }
+
+    @keyframes gamePulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 4px #ff4444;
+      }
+
+      50% {
+        box-shadow: 0 0 16px #ff4444, 0 0 32px rgba(255, 68, 68, .3);
+      }
+    }
+
+    .gaming-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .game-card {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, .06);
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      transition: all .3s;
+    }
+
+    .game-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+    }
+
+    .game-card.bgmi::before {
+      background: linear-gradient(90deg, #ff6b00, #ffd700, #ff6b00);
+    }
+
+    .game-card.valorant::before {
+      background: linear-gradient(90deg, #ff4655, #ff8fa3, #ff4655);
+    }
+
+    .game-card:hover {
+      border-color: rgba(0, 229, 255, .2);
+    }
+
+    .game-title-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .game-icon {
+      font-size: 36px;
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, .1);
+      background: rgba(255, 255, 255, .03);
+    }
+
+    .game-name {
+      font-family: var(--font-hero);
+      font-size: clamp(22px, 3vw, 34px);
+      letter-spacing: 3px;
+    }
+
+    .game-name.bgmi-col {
+      color: #ff9500;
+      text-shadow: 0 0 20px rgba(255, 149, 0, .3);
+    }
+
+    .game-name.val-col {
+      color: #ff4655;
+      text-shadow: 0 0 20px rgba(255, 70, 85, .3);
+    }
+
+    .game-subtitle {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 3px;
+      color: var(--dim);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .game-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .game-stat-box {
+      text-align: center;
+      padding: 14px;
+      background: rgba(0, 0, 0, .3);
+      border: 1px solid rgba(255, 255, 255, .05);
+    }
+
+    .gsb-val {
+      font-family: var(--font-hero);
+      font-size: clamp(22px, 3vw, 32px);
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+
+    .gsb-val.gold {
+      color: var(--gold);
+      text-shadow: 0 0 12px rgba(212, 168, 83, .4);
+    }
+
+    .gsb-val.red {
+      color: #ff4655;
+      text-shadow: 0 0 12px rgba(255, 70, 85, .3);
+    }
+
+    .gsb-val.cyan {
+      color: var(--c1);
+      text-shadow: 0 0 12px rgba(0, 229, 255, .3);
+    }
+
+    .gsb-val.green {
+      color: var(--c4);
+      text-shadow: 0 0 12px rgba(0, 255, 135, .3);
+    }
+
+    .gsb-label {
+      font-family: var(--font-mono);
+      font-size: 7px;
+      letter-spacing: 2px;
+      color: var(--dim);
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .game-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .game-badge {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 2px;
+      padding: 5px 12px;
+      text-transform: uppercase;
+      border: 1px solid;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .gb-gold {
+      border-color: rgba(212, 168, 83, .4);
+      color: var(--gold);
+      background: rgba(212, 168, 83, .06);
+    }
+
+    .gb-red {
+      border-color: rgba(255, 70, 85, .4);
+      color: #ff4655;
+      background: rgba(255, 70, 85, .06);
+    }
+
+    .gb-cyan {
+      border-color: rgba(0, 229, 255, .4);
+      color: var(--c1);
+      background: rgba(0, 229, 255, .06);
+    }
+
+    .gb-green {
+      border-color: rgba(0, 255, 135, .4);
+      color: var(--c4);
+      background: rgba(0, 255, 135, .06);
+    }
+
+    .gb-purple {
+      border-color: rgba(124, 58, 237, .4);
+      color: var(--c3);
+      background: rgba(124, 58, 237, .06);
+    }
+
+    .game-desc {
+      font-size: 12px;
+      color: rgba(234, 244, 255, .5);
+      line-height: 1.8;
+      margin-top: 14px;
+    }
+
+    .achievement-box {
+      background: linear-gradient(135deg, rgba(212, 168, 83, .08), rgba(0, 229, 255, .04));
+      border: 1px solid rgba(212, 168, 83, .25);
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+      margin-top: 40px;
+    }
+
+    .achievement-box::before {
+      content: '🏆';
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 64px;
+      opacity: .08;
+    }
+
+    .ach-tag {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 5px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .ach-tag::after {
+      content: '';
+      flex: 1;
+      max-width: 50px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .ach-title {
+      font-family: var(--font-hero);
+      font-size: clamp(22px, 3vw, 36px);
+      letter-spacing: 3px;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .ach-title span {
+      color: var(--gold);
+    }
+
+    .ach-desc {
+      font-size: 13px;
+      color: rgba(234, 244, 255, .55);
+      line-height: 1.8;
+    }
+
+    .ach-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    /* 3D canvas overlay */
+    #threeCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      opacity: .5;
+    }
+
+    /* Flashy timeline (Premiere/AE) */
+    .timeline-section {
+      margin-top: 60px;
+    }
+
+    .tl-header {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 5px;
+      color: var(--dim);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .tl-app-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .tl-app-logo {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 2px;
+      padding: 4px 10px;
+      text-transform: uppercase;
+    }
+
+    .tl-pr {
+      background: #2a2a7a;
+      color: #9999ff;
+      border: 1px solid rgba(153, 153, 255, .3);
+    }
+
+    .tl-ae {
+      background: #1a003a;
+      color: #cc88ff;
+      border: 1px solid rgba(204, 136, 255, .3);
+    }
+
+    .tl-wrap {
+      background: rgba(5, 10, 20, .9);
+      border: 1px solid rgba(0, 229, 255, .1);
+      padding: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tl-track {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tl-track-label {
+      font-family: var(--font-mono);
+      font-size: 7px;
+      letter-spacing: 1px;
+      color: var(--dim);
+      width: 60px;
+      flex-shrink: 0;
+      text-align: right;
+      text-transform: uppercase;
+    }
+
+    .tl-track-lane {
+      flex: 1;
+      height: 18px;
+      position: relative;
+      background: rgba(255, 255, 255, .03);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .tl-clip {
+      position: absolute;
+      top: 2px;
+      height: 14px;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      padding: 0 4px;
+      overflow: hidden;
+    }
+
+    .tl-clip-label {
+      font-family: var(--font-mono);
+      font-size: 6px;
+      letter-spacing: 1px;
+      color: rgba(255, 255, 255, .7);
+      white-space: nowrap;
+    }
+
+    /* Premiere clips */
+    .tl-v1 {
+      background: linear-gradient(90deg, rgba(42, 42, 122, .9), rgba(80, 80, 180, .9));
+      border: 1px solid rgba(153, 153, 255, .3);
+    }
+
+    .tl-v2 {
+      background: linear-gradient(90deg, rgba(30, 30, 100, .9), rgba(70, 70, 160, .9));
+      border: 1px solid rgba(100, 100, 220, .3);
+    }
+
+    .tl-a1 {
+      background: linear-gradient(90deg, rgba(0, 100, 150, .9), rgba(0, 150, 200, .9));
+      border: 1px solid rgba(0, 200, 255, .3);
+    }
+
+    .tl-a2 {
+      background: linear-gradient(90deg, rgba(0, 80, 120, .9), rgba(0, 120, 170, .9));
+      border: 1px solid rgba(0, 170, 220, .3);
+    }
+
+    .tl-fx {
+      background: linear-gradient(90deg, rgba(100, 0, 150, .9), rgba(160, 0, 200, .9));
+      border: 1px solid rgba(200, 0, 255, .3);
+    }
+
+    .tl-txt {
+      background: linear-gradient(90deg, rgba(150, 50, 0, .9), rgba(200, 80, 0, .9));
+      border: 1px solid rgba(255, 100, 0, .3);
+    }
+
+    /* AE layers */
+    .tl-ae-comp {
+      background: linear-gradient(90deg, rgba(80, 0, 120, .9), rgba(140, 0, 200, .9));
+      border: 1px solid rgba(200, 0, 255, .3);
+    }
+
+    .tl-ae-adj {
+      background: linear-gradient(90deg, rgba(0, 120, 60, .9), rgba(0, 180, 90, .9));
+      border: 1px solid rgba(0, 255, 135, .3);
+    }
+
+    .tl-ae-shape {
+      background: linear-gradient(90deg, rgba(150, 100, 0, .9), rgba(210, 150, 0, .9));
+      border: 1px solid rgba(255, 200, 0, .3);
+    }
+
+    .tl-ae-null {
+      background: linear-gradient(90deg, rgba(60, 60, 60, .9), rgba(100, 100, 100, .9));
+      border: 1px solid rgba(180, 180, 180, .3);
+    }
+
+    .tl-ae-3d {
+      background: linear-gradient(90deg, rgba(0, 60, 150, .9), rgba(0, 100, 220, .9));
+      border: 1px solid rgba(0, 150, 255, .3);
+    }
+
+    /* Playhead */
+    .tl-playhead {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: rgba(255, 50, 50, .9);
+      box-shadow: 0 0 6px rgba(255, 50, 50, .6);
+      z-index: 10;
+      animation: playheadMove 4s linear infinite;
+    }
+
+    @keyframes playheadMove {
+      0% {
+        left: 0%;
+      }
+
+      100% {
+        left: 100%;
+      }
+    }
+
+    /* flash fx for AE */
+    .tl-keyframe {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      background: #ffd700;
+      border-radius: 50%;
+      box-shadow: 0 0 6px #ffd700;
+      z-index: 5;
+    }
+
+    .tl-keyframe.diamond {
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      border-radius: 0;
+      width: 8px;
+      height: 8px;
+    }
+
+    .tl-timecode {
+      font-family: var(--font-mono);
+      font-size: 7px;
+      color: rgba(0, 229, 255, .4);
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      display: flex;
+      gap: 0;
+    }
+
+    .tl-tc-mark {
+      flex: 1;
+      border-left: 1px solid rgba(0, 229, 255, .15);
+      padding-left: 3px;
+    }
+
+    /* clip flash animation */
+    @keyframes clipFlash {
+
+      0%,
+      90% {
+        opacity: 1;
+      }
+
+      91% {
+        opacity: .3;
+      }
+
+      93% {
+        opacity: 1;
+      }
+
+      95% {
+        opacity: .2;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .tl-clip.flash {
+      animation: clipFlash 3s ease-in-out infinite;
+    }
+
+    .tl-clip.flash2 {
+      animation: clipFlash 2.7s ease-in-out infinite .5s;
+    }
+
+    /* keyframe diamond pulse */
+    @keyframes kfPulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 4px #ffd700;
+        transform: translateY(-50%) scale(1);
+      }
+
+      50% {
+        box-shadow: 0 0 12px #ffd700, 0 0 20px rgba(255, 215, 0, .4);
+        transform: translateY(-50%) scale(1.4);
+      }
+    }
+
+    .tl-keyframe {
+      animation: kfPulse 1.5s ease-in-out infinite;
+    }
+
+    /* effect badge */
+    .tl-effect-badge {
+      position: absolute;
+      top: 1px;
+      right: 2px;
+      font-family: var(--font-mono);
+      font-size: 5px;
+      letter-spacing: .5px;
+      color: rgba(255, 215, 0, .8);
+      background: rgba(0, 0, 0, .5);
+      padding: 1px 3px;
+      text-transform: uppercase;
+    }
+
+    /* scopes bar */
+    .tl-scopes {
+      display: flex;
+      gap: 4px;
+      height: 32px;
+      margin-top: 8px;
+      align-items: flex-end;
+    }
+
+    .scope-bar {
+      flex: 1;
+      background: linear-gradient(180deg, var(--c1), var(--c3));
+      border-radius: 1px;
+      animation: scopeAnim linear infinite;
+    }
+
+    @keyframes scopeAnim {
+
+      0%,
+      100% {
+        transform: scaleY(1);
+      }
+
+      50% {
+        transform: scaleY(.3);
+      }
+    }
+
+    /* =============================================
+   KEYFRAMES (shared)
+============================================= */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* =============================================
+       3D & PARALLAX EFFECTS
+    ============================================= */
+    /* All card tilt is handled by JS — no CSS hover transforms to avoid conflicts */
+    .tilt-target {
+      will-change: transform;
+      transition: box-shadow 0.4s ease;
+    }
+
+    /* Floating 3D orbs in hero */
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: orbFloat 8s ease-in-out infinite;
+    }
+
+    .hero-orb-1 {
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle at 30% 40%, rgba(0, 229, 255, .1), transparent 70%);
+      top: 10%;
+      left: 2%;
+      animation-delay: 0s;
+    }
+
+    .hero-orb-2 {
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle at 60% 50%, rgba(124, 58, 237, .13), transparent 70%);
+      bottom: 18%;
+      right: 8%;
+      animation-delay: -3s;
+    }
+
+    .hero-orb-3 {
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle at 50% 50%, rgba(255, 107, 0, .09), transparent 70%);
+      top: 55%;
+      left: 28%;
+      animation-delay: -5s;
+    }
+
+    @keyframes orbFloat {
+
+      0%,
+      100% {
+        transform: translateY(0) scale(1);
+      }
+
+      40% {
+        transform: translateY(-28px) scale(1.04);
+      }
+
+      70% {
+        transform: translateY(18px) scale(0.97);
+      }
+    }
+
+    /* Hero name 3D text glow pulse */
+    @keyframes heroName3d {
+
+      0%,
+      100% {
+        text-shadow:
+          0 0 20px rgba(0, 229, 255, .25),
+          0 0 40px rgba(0, 229, 255, .1),
+          2px 4px 0 rgba(0, 0, 0, .8);
+      }
+
+      50% {
+        text-shadow:
+          0 0 40px rgba(0, 229, 255, .45),
+          0 0 80px rgba(0, 229, 255, .2),
+          0 0 120px rgba(124, 58, 237, .12),
+          2px 4px 0 rgba(0, 0, 0, .8);
+      }
+    }
+
+    .hero-name {
+      animation: fadeUp .8s ease forwards .8s, heroName3d 4s ease-in-out infinite 1.5s;
+    }
+
+    /* ═══════════════ GLOBAL SMOOTHNESS ═══════════════ */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    *,
+    *::before,
+    *::after {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* GPU-composited transitions everywhere they matter */
+    a,
+    button,
+    .btn,
+    .chip,
+    .nav-link,
+    .skill-item,
+    .gear-item,
+    .game-card,
+    .aiml-cert-card,
+    .exp-card,
+    .band-item,
+    .photo-card,
+    .contact-btn {
+      will-change: transform;
+      backface-visibility: hidden;
+    }
+
+    /* ═══════════════ PHOTO GALLERY SECTION ═══════════════ */
+    #moments {
+      min-height: 100vh;
+      padding: 120px var(--pad) 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #moments::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 15% 50%, rgba(0, 229, 255, .04) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 35% at 85% 50%, rgba(124, 58, 237, .04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .moments-title {
+      font-family: var(--font-display, 'Syne', sans-serif);
+      font-size: clamp(2.8rem, 7vw, 6rem);
+      font-weight: 900;
+      letter-spacing: -2px;
+      text-align: center;
+      background: linear-gradient(135deg, #fff 0%, rgba(0, 229, 255, .9) 50%, rgba(124, 58, 237, .8) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+
+    .moments-sub {
+      font-family: var(--font-mono, monospace);
+      font-size: 11px;
+      letter-spacing: 5px;
+      color: rgba(255, 255, 255, .3);
+      text-transform: uppercase;
+      margin-bottom: 72px;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      max-width: 1100px;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        max-width: 420px;
+      }
+    }
+
+    .photo-card {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      cursor: pointer;
+      background: #0d0d14;
+      border: 1px solid rgba(255, 255, 255, .06);
+      box-shadow:
+        0 8px 32px rgba(0, 0, 0, .6),
+        inset 0 1px 0 rgba(255, 255, 255, .05);
+      transition: box-shadow 0.45s ease;
+    }
+
+    .photo-card:hover {
+      box-shadow:
+        0 32px 72px rgba(0, 0, 0, .7),
+        0 0 60px rgba(0, 229, 255, .12),
+        inset 0 1px 0 rgba(255, 255, 255, .1);
+    }
+
+    /* Top accent line */
+    .photo-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: var(--accent-line, linear-gradient(90deg, transparent, #00e5ff, transparent));
+      border-radius: 2px;
+      z-index: 3;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .photo-card:hover::before {
+      opacity: 1;
+    }
+
+    .photo-card.amd-card {
+      --accent-line: linear-gradient(90deg, transparent, #ff4500, transparent);
+    }
+
+    .photo-card.nvidia-card {
+      --accent-line: linear-gradient(90deg, transparent, #76b900, transparent);
+    }
+
+    .photo-card.snap-card {
+      --accent-line: linear-gradient(90deg, transparent, #0059d1, transparent);
+    }
+
+    /* ── Image wrapper ── */
+    .photo-img-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+    }
+
+    .photo-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform 0.6s cubic-bezier(.23, 1, .32, 1), filter 0.4s ease;
+      filter: brightness(.92) saturate(1.1);
+    }
+
+    .photo-card:hover .photo-img-wrap img {
+      transform: scale(1.06);
+      filter: brightness(1) saturate(1.2);
+    }
+
+    /* Gradient overlay */
+    .photo-img-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+          transparent 45%,
+          rgba(5, 5, 15, .85) 100%);
+      z-index: 1;
+    }
+
+    /* ── Info bar ── */
+    .photo-info {
+      position: relative;
+      padding: 20px 22px 22px;
+      z-index: 2;
+    }
+
+    .photo-venue {
+      font-family: var(--font-mono, monospace);
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .35);
+      margin-bottom: 4px;
+    }
+
+    .photo-event {
+      font-family: var(--font-display, 'Syne', sans-serif);
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .photo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-family: var(--font-mono, monospace);
+      font-size: 9px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-transform: uppercase;
+      border: 1px solid;
+    }
+
+    .amd-card .photo-badge {
+      color: #ff6422;
+      border-color: rgba(255, 100, 34, .3);
+      background: rgba(255, 100, 34, .07);
+    }
+
+    .nvidia-card .photo-badge {
+      color: #76b900;
+      border-color: rgba(118, 185, 0, .3);
+      background: rgba(118, 185, 0, .07);
+    }
+
+    .snap-card .photo-badge {
+      color: #4fa3ff;
+      border-color: rgba(79, 163, 255, .3);
+      background: rgba(79, 163, 255, .07);
+    }
+
+    /* ── 3D frame shine effect ── */
+    .photo-shine {
+      position: absolute;
+      inset: 0;
+      border-radius: 18px;
+      background: linear-gradient(135deg,
+          rgba(255, 255, 255, .08) 0%,
+          transparent 50%,
+          rgba(255, 255, 255, .03) 100%);
+      z-index: 4;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .photo-card:hover .photo-shine {
+      opacity: 1;
+    }
+
+    #bgCanvas {
+      opacity: 0;
+      animation: fadeIn 2s ease forwards 0.5s;
+    }
+
+    /* ═══════════ 60fps / MOBILE SMOOTHNESS ═══════════ */
+    html {
+      -webkit-overflow-scrolling: touch;
+      /* iOS momentum scroll */
+    }
+
+    /* Prevent layout thrash on scroll */
+    body {
+      overscroll-behavior: none;
+    }
+
+    /* Remove tap highlight flicker on mobile */
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Photo grid mobile: stack single column */
+    @media (max-width: 600px) {
+      .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 100%;
+      }
+
+      .photo-img-wrap {
+        aspect-ratio: 4/5;
+      }
+
+      .moments-title {
+        font-size: 2.6rem;
+        letter-spacing: -1px;
+      }
+
+      .game-card {
+        min-width: 0;
+      }
+
+      .hero-name {
+        font-size: clamp(2.4rem, 12vw, 5rem);
+      }
+    }
+
+    @media (max-width: 900px) and (min-width: 601px) {
+      .photo-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* Smoother card hover glow (box-shadow transition stays CSS, transform is JS) */
+    .game-card,
+    .aiml-cert-card,
+    .gear-item,
+    .skill-item,
+    .exp-card,
+    .photo-card {
+      transition: box-shadow 0.35s ease;
+      transform-style: preserve-3d;
+    }
+
+    /* Smooth nav */
+    .nav-link {
+      transition: color 0.2s ease, opacity 0.2s ease;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background -->
+  <canvas id="bgCanvas"></canvas>
+  <div class="ov-vignette"></div>
+  <div class="ov-scan"></div>
+
+  <!-- ═══════════════ NAVBAR ═══════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <div class="nav-dot-logo"></div>
+        SUJAL<span>.</span>KR
+      </a>
+      <div class="nav-links">
+        <a href="#reel" class="nav-link">Reel</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#gaming" class="nav-link">Gaming</a>
+        <a href="#aiml" class="nav-link">AI/ML</a>
+        <a href="#gear" class="nav-link">Gear</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#moments" class="nav-link">Moments</a>
+      </div>
+      <a href="mailto:sujalafx23@gmail.com" class="nav-cta">Hire Me</a>
+      <button class="nav-mobile-btn" id="mobileMenuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile-menu" id="mobileMenu">
+      <a href="#reel" class="mobile-link">Reel</a>
+      <a href="#skills" class="mobile-link">Skills</a>
+      <a href="#experience" class="mobile-link">Experience</a>
+      <a href="#gaming" class="mobile-link">Gaming</a>
+      <a href="#aiml" class="mobile-link">AI / ML</a>
+      <a href="#gear" class="mobile-link">Gear</a>
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#moments" class="mobile-link">Moments</a>
+      <a href="mailto:sujalafx23@gmail.com" class="mobile-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section id="hero">
+    <div class="hero-inner">
+      <div
+        style="position:absolute;top:90px;right:var(--pad);z-index:2;opacity:.22;pointer-events:none;animation:fadeIn 1s ease forwards 2.5s;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;opacity:.4;">
+          <svg viewBox="0 0 24 24" width="120" height="120">
+            <path fill="#FF0000"
+              d="M21.3906 5.5833c-1.3467.0115-3.4338.19541-5.9375.97657-1.6024.49851-3.916 2.74203-8.22459 6.90823-.56973.3204-2.67017-.8912-3.88085-1.461 0 0 1.9929 3.1699 2.70507 4.0957 1.06825 1.46 3.02735 2.3145 3.02735 2.3145-.17804-.1781-1.53019-1.6029-1.92188-2.4219-.24926-.3917.03418-.9624 1.95703-2.3867C10.86 12.3268 17.0569 7.09358 23.0391 5.66924c0 0-.601-.09488-1.6485-.08593V5.5833ZM24 7.7708c-2.0653.21366-4.06.81878-5.9473 1.70899C14.2783 11.2602 7.9043 15.8177 7.9043 15.8177c.28486.178.5706.3556.85546.498 3.06234 1.3531 7.58484 2.1716 8.43944 1.8867 2.3858-.7833 5.056-5.8026 5.875-8.1172 0 0-2.4933.9968-5.0215 2.1719-2.1009.9971-4.414 2.1368-4.414 2.1368l5.875-1.7813s-1.5676 3.7036-3.6328 4.1309c-2.0653.4273-5.6973-1.0332-5.6973-1.0332.2849-.2493 4.1302-3.0629 13.1035-6.73051.3917-.28487.6417-.74608.7129-1.20898V7.7708ZM0 11.2942c.35608.9615.8194 1.8525 1.35352 2.7071.64094.819 3.27477 1.4952 3.63086 1.5664C3.34638 14.4282 0 11.2942 0 11.2942Z" />
+          </svg>
+          <span style="font-family:monospace;font-size:8px;letter-spacing:2px;color:#FF0000;font-weight:900;">REPUBLIC
+            OF GAMERS</span>
+        </div>
+      </div>
+      <div class="hero-eyebrow">● SENIOR VIDEO EDITOR · JAIPUR, INDIA · 2024 ●</div>
+      <h1 class="hero-name">SUJAL KUMAR</h1>
+      <div class="hero-title-row">
+        <span class="hero-title-item">Senior Video Editor</span>
+        <div class="hero-title-sep"></div>
+        <span class="hero-title-item">Motion Designer</span>
+        <div class="hero-title-sep"></div>
+        <span class="hero-title-item">3D Artist</span>
+      </div>
+      <p class="hero-desc">Cinematic storyteller crafting high-impact visual narratives for global technology brands.
+        Currently shaping the visual identity of ASUS India &amp; Qualcomm — turning complex tech into compelling
+        stories
+        that move people.</p>
+      <div class="hero-chips">
+        <div class="chip highlight">ASUS India</div>
+        <div class="chip highlight">Qualcomm</div>
+        <div class="chip">Premiere Pro</div>
+        <div class="chip">After Effects</div>
+        <div class="chip">Blender 3D</div>
+        <div class="chip">AIML Student</div>
+        <div class="chip">NVIDIA Certified</div>
+        <div class="chip highlight" style="border-color:rgba(255,149,0,.4);color:#ff9500;">BGMI Tier II</div>
+        <div class="chip highlight" style="border-color:rgba(255,70,85,.4);color:#ff4655;">Valorant</div>
+        <div class="chip highlight" style="border-color:rgba(212,168,83,.4);color:var(--gold);">🏆 State Finalist</div>
+      </div>
+      <div class="hero-ctas">
+        <a href="#reel" class="btn-primary"><span>▶ Watch Reel</span></a>
+        <a href="mailto:sujalafx23@gmail.com" class="btn-secondary">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hs-num">3<span style="font-size:.6em;color:var(--c2)">+</span></div>
+        <div class="hs-label">Years Exp</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hs-num">200<span style="font-size:.6em;color:var(--c2)">+</span></div>
+        <div class="hs-label">Projects</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hs-num">1B<span style="font-size:.6em;color:var(--c2)">+</span></div>
+        <div class="hs-label">Total Views</div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>SCROLL
+    </div>
+  </section>
+
+  <!-- ═══════════════ BAND ═══════════════ -->
+  <div id="about-band">
+    <div class="band-inner">
+      <div class="band-item reveal">
+        <div class="bi-icon">🎬</div>
+        <div class="bi-title">POST-PRODUCTION</div>
+        <div class="bi-sub">END-TO-END PIPELINE EXPERT</div>
+      </div>
+      <div class="band-item reveal delay-2">
+        <div class="bi-icon">🌐</div>
+        <div class="bi-title">GLOBAL BRANDS</div>
+        <div class="bi-sub">ASUS · QUALCOMM · SNAPDRAGON</div>
+      </div>
+      <div class="band-item reveal delay-4">
+        <div class="bi-icon">🤖</div>
+        <div class="bi-title">AI/ML CERTIFIED</div>
+        <div class="bi-sub">NVIDIA GEN AI · LLM SPECIALIST</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ REEL ═══════════════ -->
+  <section id="reel">
+    <div class="section-inner">
+      <div class="section-tag reveal">02 // Showreel</div>
+      <div class="reel-header-row">
+        <div class="reveal">
+          <h2 class="section-title">DIRECTOR'S<br><span>CUT</span></h2>
+          <div class="section-sub">SELECTED WORKS 2021 — 2024</div>
+        </div>
+        <div id="reelSceneLabel"
+          style="font-family:var(--font-mono);font-size:9px;letter-spacing:4px;color:var(--dim);align-self:flex-end;"
+          class="reveal">SCENE 01 / 05</div>
+      </div>
+      <div class="reel-screen reveal">
+        <div class="rs-scan"></div>
+        <div class="rs rs1-bg vis" id="rsc0">
+          <div class="rs-grid"></div>
+          <div class="rs-content" style="flex-direction:column;width:90%;max-width:700px;">
+            <div class="rsc-label" style="margin-bottom:12px;"><span
+                style="background:#2a2a7a;padding:3px 10px;border-radius:2px;color:#9999ff;">Pr</span> &nbsp;ADOBE
+              PREMIERE PRO — TIMELINE</div>
+            <div class="tl-timecode">
+              <div class="tl-tc-mark">00:00:00</div>
+              <div class="tl-tc-mark">00:00:05</div>
+              <div class="tl-tc-mark">00:00:10</div>
+              <div class="tl-tc-mark">00:00:15</div>
+              <div class="tl-tc-mark">00:00:20</div>
+            </div>
+            <div class="tl-wrap" style="position:relative;">
+              <div class="tl-playhead"></div>
+              <div class="tl-track">
+                <div class="tl-track-label">V3</div>
+                <div class="tl-track-lane">
+                  <div class="tl-clip tl-txt flash" style="left:5%;width:30%;"><span class="tl-clip-label">TITLE
+                      CARD</span><span class="tl-effect-badge">LUMETRI</span></div>
+                  <div class="tl-clip tl-txt flash2" style="left:60%;width:25%;"><span class="tl-clip-label">LOWER
+                      THIRD</span></div>
+                </div>
+              </div>
+              <div class="tl-track">
+                <div class="tl-track-label">V2</div>
+                <div class="tl-track-lane">
+                  <div class="tl-clip tl-fx" style="left:0%;width:45%;"><span class="tl-clip-label">VFX
+                      OVERLAY</span><span class="tl-effect-badge">WARP</span></div>
+                  <div class="tl-clip tl-fx flash" style="left:50%;width:40%;"><span class="tl-clip-label">GLITCH
+                      FX</span></div>
+                </div>
+              </div>
+              <div class="tl-track">
+                <div class="tl-track-label">V1</div>
+                <div class="tl-track-lane">
+                  <div class="tl-clip tl-v1" style="left:0%;width:35%;"><span class="tl-clip-label">HERO SHOT A</span>
+                  </div>
+                  <div class="tl-clip tl-v2 flash2" style="left:36%;width:28%;"><span class="tl-clip-label">SPEED
+                      RAMP</span><span class="tl-effect-badge">OPTICAL FLOW</span></div>
+                  <div class="tl-clip tl-v1" style="left:65%;width:35%;"><span class="tl-clip-label">HERO SHOT B</span>
+                  </div>
+                </div>
+              </div>
+              <div class="tl-track">
+                <div class="tl-track-label">A1</div>
+                <div class="tl-track-lane">
+                  <div class="tl-clip tl-a1" style="left:0%;width:100%;"><span class="tl-clip-label">MUSIC BED —
+                      MASTER</span></div>
+                </div>
+              </div>
+              <div class="tl-track">
+                <div class="tl-track-label">A2</div>
+                <div class="tl-track-lane">
+                  <div class="tl-clip tl-a2" style="left:0%;width:50%;"><span class="tl-clip-label">SFX LAYER</span>
+                  </div>
+                  <div class="tl-clip tl-a2 flash" style="left:55%;width:40%;"><span class="tl-clip-label">IMPACT
+                      HIT</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rs rs2-bg" id="rsc1">
+          <div class="speed-lines-wrap" id="speedWrap"></div>
+          <div class="rs-content" style="position:relative;z-index:2;">
+            <div class="rsc-label">DYNAMIC EDITING</div>
+            <div class="rsc-title" style="color:var(--c2);text-shadow:0 0 30px rgba(255,107,0,.4);">SPEED RAMP</div>
+            <div class="rsc-sub">J-CUT · L-CUT · WARP TRANSITIONS · OPTICAL FLOW · RETIME</div>
+          </div>
+        </div>
+        <div class="rs rs3-bg" id="rsc2">
+          <div class="rs-grid"></div>
+          <div class="rs-content" style="flex-direction:column;width:90%;max-width:700px;">
+            <div class="rsc-label" style="margin-bottom:12px;"><span
+                style="background:#1a003a;padding:3px 10px;border-radius:2px;color:#cc88ff;">Ae</span> &nbsp;AFTER
+              EFFECTS — COMPOSITION TIMELINE</div>
+            <div class="tl-timecode">
+              <div class="tl-tc-mark">0:00:00</div>
+              <div class="tl-tc-mark">0:00:02</div>
+              <div class="tl-tc-mark">0:00:04</div>
+              <div class="tl-tc-mark">0:00:06</div>
+              <div class="tl-tc-mark">0:00:08</div>
+            </div>
+            <div class="tl-wrap" style="position:relative;">
+              <div class="tl-playhead"
+                style="animation-duration:3s;background:rgba(100,255,100,.9);box-shadow:0 0 6px rgba(100,255,100,.6);">
+              </div>
+              <div class="tl-track">
+                <div class="tl-track-label">NULL OBJ</div>
+                <div class="tl-track-lane">
+                  <div class="tl-clip tl-ae-null flash" style="left:0%;width:100%;"><span class="tl-clip-label">MASTER
+                      CONTROLLER</span><span class="tl-effect-badge">EXPRESSIONS</span>
+                    <div class="tl-keyframe diamond" style="left:20%;top:50%;"></div>
+                    <div class="tl-keyframe diamond" style="left:50%;top:50%;"></div>
+                    <div class="tl-keyframe diamond" style="left:80%;top:50%;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="tl-track">
+                <div class="tl-track-label">3D LAYER</div>
+                <div class="tl-track-lane">
+                  <div class="tl-clip tl-ae-3d" style="left:5%;width:85%;"><span class="tl-clip-label">CAMERA
+                      ORBIT</span><span class="tl-effect-badge">3D</span>
+                    <div class="tl-keyframe" style="left:15%;top:50%;"></div>
+                    <div class="tl-keyframe" style="left:60%;top:50%;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="tl-track">
+                <div class="tl-track-label">ADJ LAYER</div>
+                <div class="tl-track-lane">
+                  <div class="tl-clip tl-ae-adj flash2" style="left:10%;width:80%;"><span class="tl-clip-label">GLOW +
+                      CHROMATIC</span><span class="tl-effect-badge">FX</span></div>
+                </div>
+              </div>
+              <div class="tl-track">
+                <div class="tl-track-label">SHAPE</div>
+                <div class="tl-track-lane">
+                  <div class="tl-clip tl-ae-shape" style="left:0%;width:40%;"><span class="tl-clip-label">KINETIC
+                      TYPE</span>
+                    <div class="tl-keyframe" style="left:10%;top:50%;"></div>
+                    <div class="tl-keyframe" style="left:80%;top:50%;"></div>
+                  </div>
+                  <div class="tl-clip tl-ae-shape flash" style="left:45%;width:50%;"><span
+                      class="tl-clip-label">PARTICLE BURST</span><span class="tl-effect-badge">TRAPCODE</span></div>
+                </div>
+              </div>
+              <div class="tl-track">
+                <div class="tl-track-label">COMP</div>
+                <div class="tl-track-lane">
+                  <div class="tl-clip tl-ae-comp" style="left:0%;width:100%;"><span class="tl-clip-label">MASTER COMP —
+                      VFX HERO SEQUENCE</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rs rs4-bg" id="rsc3">
+          <div class="rs-content">
+            <div class="glitch" data-t="BLENDER 3D">BLENDER 3D</div>
+            <div class="rsc-sub" style="color:var(--c4);margin-top:12px;">MODELING · ANIMATION · EEVEE · CYCLES ·
+              GEOMETRY NODES</div>
+          </div>
+        </div>
+        <div class="rs rs5-bg" id="rsc4">
+          <div class="rs-content" style="flex-direction:column;gap:16px;">
+            <div class="color-bars-row">
+              <div class="cb" style="background:linear-gradient(180deg,#ff0000,#5b0000);"></div>
+              <div class="cb" style="background:linear-gradient(180deg,#ff4400,#622000);"></div>
+              <div class="cb" style="background:linear-gradient(180deg,#ffcc00,#664a00);"></div>
+              <div class="cb" style="background:linear-gradient(180deg,#ffffff,#777777);"></div>
+              <div class="cb" style="background:linear-gradient(180deg,#00ff87,#006633);"></div>
+              <div class="cb" style="background:linear-gradient(180deg,#00aaff,#002244);"></div>
+              <div class="cb" style="background:linear-gradient(180deg,#3300ff,#110044);"></div>
+            </div>
+            <div class="rs-content">
+              <div class="rsc-label">DAVINCI RESOLVE</div>
+              <div class="rsc-title" style="color:var(--gold);text-shadow:0 0 30px rgba(212,168,83,.4);">COLOR GRADING
+              </div>
+              <div class="rsc-sub">CINEMATIC LUTS · HDR MASTER · CORPORATE-GRADE · FILM LOOKS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reel-player-bar reveal">
+        <button class="rpb-btn">◀◀</button>
+        <button class="rpb-btn" id="reelPlayBtn">❚❚ PAUSE</button>
+        <button class="rpb-btn">▶▶</button>
+        <div class="rpb-timeline">
+          <div class="rpb-fill" id="reelFill"></div>
+        </div>
+        <span class="rpb-label" id="reelSceneName">PREMIERE PRO</span>
+        <span class="rpb-time" id="reelTimeDisplay">0:42 / 3:30</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SKILLS ═══════════════ -->
+  <section id="skills">
+    <div class="section-inner">
+      <div class="section-tag reveal">03 // Skills</div>
+      <h2 class="section-title reveal">EXPERT<br><span>STACK</span></h2>
+      <div class="section-sub reveal">3+ YEARS OF PROFESSIONAL MASTERY</div>
+      <div class="skills-layout">
+        <div class="reveal-left">
+          <div class="sk-group-label">// POST-PRODUCTION</div>
+          <div class="skill-row">
+            <div class="sk-icon-box"><svg viewBox="0 0 40 40" width="24" height="24">
+                <rect x="4" y="4" width="32" height="32" rx="3" fill="#2A2A7A" /><text x="20" y="27" font-family="Arial"
+                  font-size="14" font-weight="bold" fill="#9999FF" text-anchor="middle">Pr</text>
+              </svg></div>
+            <div class="sk-info">
+              <div class="sk-name">Adobe Premiere Pro</div>
+              <div class="sk-sub">MULTICAM · PROXY · COLOR WORKFLOWS</div>
+              <div class="sk-bar">
+                <div class="sk-fill" style="--pct:98%;"></div>
+              </div>
+            </div>
+            <div class="sk-pct">98%</div>
+          </div>
+          <div class="skill-row">
+            <div class="sk-icon-box"><svg viewBox="0 0 40 40" width="24" height="24">
+                <rect x="4" y="4" width="32" height="32" rx="3" fill="#1A003A" /><text x="20" y="27" font-family="Arial"
+                  font-size="14" font-weight="bold" fill="#CC88FF" text-anchor="middle">Ae</text>
+              </svg></div>
+            <div class="sk-info">
+              <div class="sk-name">After Effects</div>
+              <div class="sk-sub">VFX · MOTION GRAPHICS · EXPRESSIONS</div>
+              <div class="sk-bar">
+                <div class="sk-fill" style="--pct:95%;transition-delay:.1s"></div>
+              </div>
+            </div>
+            <div class="sk-pct">95%</div>
+          </div>
+          <div class="skill-row">
+            <div class="sk-icon-box"><svg viewBox="0 0 40 40" width="24" height="24">
+                <rect x="4" y="4" width="32" height="32" rx="3" fill="#1A1A00" /><text x="20" y="27" font-family="Arial"
+                  font-size="12" font-weight="bold" fill="#FFD700" text-anchor="middle">DR</text>
+              </svg></div>
+            <div class="sk-info">
+              <div class="sk-name">DaVinci Resolve</div>
+              <div class="sk-sub">COLOR GRADING · HDR · LUT DESIGN</div>
+              <div class="sk-bar">
+                <div class="sk-fill" style="--pct:92%;transition-delay:.15s"></div>
+              </div>
+            </div>
+            <div class="sk-pct">92%</div>
+          </div>
+          <div class="skill-row">
+            <div class="sk-icon-box"><svg viewBox="0 0 40 40" width="24" height="24">
+                <rect x="4" y="4" width="32" height="32" rx="3" fill="#001A33" /><text x="20" y="27" font-family="Arial"
+                  font-size="14" font-weight="bold" fill="#00AAFF" text-anchor="middle">Au</text>
+              </svg></div>
+            <div class="sk-info">
+              <div class="sk-name">Adobe Audition</div>
+              <div class="sk-sub">SOUND DESIGN · MIXING · SPATIAL AUDIO</div>
+              <div class="sk-bar">
+                <div class="sk-fill" style="--pct:88%;transition-delay:.2s"></div>
+              </div>
+            </div>
+            <div class="sk-pct">88%</div>
+          </div>
+          <div class="skill-row">
+            <div class="sk-icon-box"><svg viewBox="0 0 40 40" width="24" height="24">
+                <rect x="4" y="4" width="32" height="32" rx="3" fill="#1A0020" /><text x="20" y="27" font-family="Arial"
+                  font-size="12" font-weight="bold" fill="#FF66FF" text-anchor="middle">Me</text>
+              </svg></div>
+            <div class="sk-info">
+              <div class="sk-name">Media Encoder</div>
+              <div class="sk-sub">MULTI-PLATFORM · CODEC MASTERY</div>
+              <div class="sk-bar">
+                <div class="sk-fill" style="--pct:96%;transition-delay:.25s"></div>
+              </div>
+            </div>
+            <div class="sk-pct">96%</div>
+          </div>
+          <div class="skill-row">
+            <div class="sk-icon-box"><svg viewBox="0 0 40 40" width="24" height="24">
+                <rect x="4" y="4" width="32" height="32" rx="3" fill="#001500" /><text x="20" y="27" font-family="Arial"
+                  font-size="12" font-weight="bold" fill="#00CC66" text-anchor="middle">Ps</text>
+              </svg></div>
+            <div class="sk-info">
+              <div class="sk-name">Photoshop</div>
+              <div class="sk-sub">COMPOSITING · RETOUCHING · VFX PREP</div>
+              <div class="sk-bar">
+                <div class="sk-fill" style="--pct:86%;transition-delay:.3s"></div>
+              </div>
+            </div>
+            <div class="sk-pct">86%</div>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <div class="sk-group-label">// MOTION, 3D &amp; DIRECTION</div>
+          <div class="skill-row">
+            <div class="sk-icon-box"><svg viewBox="0 0 40 40" width="24" height="24">
+                <rect x="4" y="4" width="32" height="32" rx="3" fill="#0A0A25" /><text x="20" y="27" font-family="Arial"
+                  font-size="11" font-weight="bold" fill="#E87D0D" text-anchor="middle">BLN</text>
+              </svg></div>
+            <div class="sk-info">
+              <div class="sk-name">Blender 3D</div>
+              <div class="sk-sub">MODELING · ANIMATION · EEVEE · CYCLES</div>
+              <div class="sk-bar">
+                <div class="sk-fill" style="--pct:90%;transition-delay:.05s"></div>
+              </div>
+            </div>
+            <div class="sk-pct">90%</div>
+          </div>
+          <div class="skill-row">
+            <div class="sk-icon-box">✦</div>
+            <div class="sk-info">
+              <div class="sk-name">Motion Design</div>
+              <div class="sk-sub">KINETIC TYPE · UI ANIM · BRAND SYSTEMS</div>
+              <div class="sk-bar">
+                <div class="sk-fill" style="--pct:94%;transition-delay:.1s"></div>
+              </div>
+            </div>
+            <div class="sk-pct">94%</div>
+          </div>
+          <div class="skill-row">
+            <div class="sk-icon-box">📱</div>
+            <div class="sk-info">
+              <div class="sk-name">Social / Short-Form</div>
+              <div class="sk-sub">INSTAGRAM · YOUTUBE · REELS · TIKTOK</div>
+              <div class="sk-bar">
+                <div class="sk-fill" style="--pct:97%;transition-delay:.15s"></div>
+              </div>
+            </div>
+            <div class="sk-pct">97%</div>
+          </div>
+          <div class="skill-row">
+            <div class="sk-icon-box">🎯</div>
+            <div class="sk-info">
+              <div class="sk-name">Project Direction</div>
+              <div class="sk-sub">PIPELINE LEAD · CLIENT MANAGEMENT</div>
+              <div class="sk-bar">
+                <div class="sk-fill" style="--pct:89%;transition-delay:.2s"></div>
+              </div>
+            </div>
+            <div class="sk-pct">89%</div>
+          </div>
+          <div class="skill-row">
+            <div class="sk-icon-box">🎨</div>
+            <div class="sk-info">
+              <div class="sk-name">Illustrator</div>
+              <div class="sk-sub">VECTOR DESIGN · BRAND ASSETS · ICONS</div>
+              <div class="sk-bar">
+                <div class="sk-fill" style="--pct:80%;transition-delay:.25s"></div>
+              </div>
+            </div>
+            <div class="sk-pct">80%</div>
+          </div>
+          <div class="skill-row">
+            <div class="sk-icon-box">🔗</div>
+            <div class="sk-info">
+              <div class="sk-name">Frame.io / Notion</div>
+              <div class="sk-sub">REVIEW TOOLS · WORKFLOW MANAGEMENT</div>
+              <div class="sk-bar">
+                <div class="sk-fill" style="--pct:92%;transition-delay:.3s"></div>
+              </div>
+            </div>
+            <div class="sk-pct">92%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ EXPERIENCE ═══════════════ -->
+  <section id="experience">
+    <div class="section-inner">
+      <div class="section-tag reveal">04 // Experience</div>
+      <h2 class="section-title reveal">CAREER<br><span>TIMELINE</span></h2>
+      <div class="section-sub reveal">3+ YEARS · SENIOR-LEVEL · GLOBAL TECHNOLOGY BRANDS</div>
+      <div class="exp-grid" style="margin-top:48px;">
+        <div class="exp-card reveal">
+          <div class="exp-top">
+            <div class="exp-company-row">
+              <div class="exp-company" style="color:var(--c1);">ASUS INDIA</div><span
+                class="exp-badge badge-current">CURRENT</span>
+            </div>
+            <div class="exp-period">2023 — PRESENT</div>
+          </div>
+          <div class="exp-role">Senior Video Editor &amp; Motion Designer</div>
+          <div class="exp-desc">Lead video editor for ASUS India's complete digital marketing ecosystem — product
+            launches, social campaigns, and brand storytelling across all platforms. Responsible for cinematic-grade
+            product films, high-impact reels, and motion design assets for India's largest tech audience.</div>
+          <div class="exp-tags"><span class="etag">Product Launches</span><span class="etag">Social Media</span><span
+              class="etag">Brand Films</span><span class="etag">Motion Graphics</span><span class="etag">ROG
+              Campaigns</span></div>
+        </div>
+        <div class="exp-card reveal delay-2">
+          <div class="exp-top">
+            <div class="exp-company-row">
+              <div class="exp-company" style="color:var(--c2);">QUALCOMM</div><span
+                class="exp-badge badge-global">GLOBAL</span>
+            </div>
+            <div class="exp-period">2022 — 2023</div>
+          </div>
+          <div class="exp-role">Senior Video Editor · Technology Campaigns</div>
+          <div class="exp-desc">Delivered high-profile tech campaign videos for Qualcomm's Snapdragon processor line —
+            advanced chip visualization, 3D animated explainers, and developer content distributed across 20+ global
+            markets.</div>
+          <div class="exp-tags"><span class="etag">Snapdragon</span><span class="etag">3D Visualization</span><span
+              class="etag">Tech Explainers</span><span class="etag">Global Delivery</span></div>
+        </div>
+        <div class="exp-card reveal delay-3">
+          <div class="exp-top">
+            <div class="exp-company-row">
+              <div class="exp-company" style="color:var(--c3);">INDEPENDENT</div><span
+                class="exp-badge badge-freelance">FREELANCE</span>
+            </div>
+            <div class="exp-period">2020 — 2022</div>
+          </div>
+          <div class="exp-role">Video Editor · Motion Artist</div>
+          <div class="exp-desc">Built professional foundations across broadcast editing, motion graphics, and color
+            science serving fintech, e-commerce, and media clients.</div>
+          <div class="exp-tags"><span class="etag">Commercial Editing</span><span class="etag">Brand
+              Identity</span><span class="etag">Post-Production</span></div>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat-box reveal delay-1">
+          <div><span class="stat-num">200</span><span class="stat-unit">+</span></div>
+          <div class="stat-lbl">Projects Delivered</div>
+        </div>
+        <div class="stat-box reveal delay-3">
+          <div><span class="stat-num">1B</span><span class="stat-unit">+</span></div>
+          <div class="stat-lbl">Video Views</div>
+        </div>
+        <div class="stat-box reveal delay-5">
+          <div><span class="stat-num">3.5</span><span class="stat-unit">yr</span></div>
+          <div class="stat-lbl">Industry Experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ GAMING ═══════════════ -->
+  <section id="gaming">
+    <div class="section-inner">
+      <div class="section-tag reveal">06 // Gaming</div>
+      <div class="gaming-header-row">
+        <div class="reveal">
+          <h2 class="section-title">LEVEL<br><span>UP</span></h2>
+          <div class="section-sub">COMPETITIVE GAMER · STATE LEVEL FINALIST · BGMI TIER II</div>
+        </div>
+        <div class="gaming-status reveal">
+          <div class="gaming-dot"></div>CURRENTLY RANKED · ONLINE
+        </div>
+      </div>
+      <div class="gaming-layout">
+        <div class="game-card bgmi reveal-left">
+          <div class="game-title-row">
+            <div class="game-icon" style="background:rgba(204,17,17,.06);border-color:rgba(204,17,17,.3);">🔫</div>
+            <div>
+              <div class="game-name bgmi-col">BGMI</div>
+              <div class="game-subtitle">Battlegrounds Mobile India</div>
+            </div>
+          </div>
+          <div class="game-stats-grid">
+            <div class="game-stat-box">
+              <div class="gsb-val gold">TIER II</div>
+              <div class="gsb-label">Peak Rank</div>
+            </div>
+            <div class="game-stat-box">
+              <div class="gsb-val cyan">Conqueror</div>
+              <div class="gsb-label">Push Target</div>
+            </div>
+            <div class="game-stat-box">
+              <div class="gsb-val green">AR</div>
+              <div class="gsb-label">Main Role</div>
+            </div>
+            <div class="game-stat-box">
+              <div class="gsb-val gold">TPP</div>
+              <div class="gsb-label">Perspective</div>
+            </div>
+          </div>
+          <div class="game-badge-row"><span class="game-badge gb-gold">🏅 Tier II</span><span
+              class="game-badge gb-cyan">Squad Leader</span><span class="game-badge gb-green">Ace Pushes</span></div>
+          <p class="game-desc">Grinded from Bronze to Tier II in BGMI — mastering squad coordination, rotations, and
+            high-pressure clutch moments.</p>
+        </div>
+        <div class="game-card valorant reveal-right">
+          <div class="game-title-row">
+            <div class="game-icon" style="background:rgba(255,70,85,.06);border-color:rgba(255,70,85,.3);">🎯</div>
+            <div>
+              <div class="game-name val-col">VALORANT</div>
+              <div class="game-subtitle">Riot Games Tactical Shooter</div>
+            </div>
+          </div>
+          <div class="game-stats-grid">
+            <div class="game-stat-box">
+              <div class="gsb-val red">State</div>
+              <div class="gsb-label">Finals Qualified</div>
+            </div>
+            <div class="game-stat-box">
+              <div class="gsb-val cyan">Sentinels</div>
+              <div class="gsb-label">Main Role</div>
+            </div>
+            <div class="game-stat-box">
+              <div class="gsb-val green">60%+</div>
+              <div class="gsb-label">Win Rate</div>
+            </div>
+            <div class="game-stat-box">
+              <div class="gsb-val gold">IGL</div>
+              <div class="gsb-label">Team Role</div>
+            </div>
+          </div>
+          <div class="game-badge-row"><span class="game-badge gb-red">🏆 State Finals</span><span
+              class="game-badge gb-purple">IGL</span><span class="game-badge gb-cyan">Sage / Cypher</span></div>
+          <p class="game-desc">Qualified for State Level Valorant Finals — representing the competitive side of the
+            gaming grind. As an IGL, I command team strategy and call rotations in real-time.</p>
+        </div>
+      </div>
+      <div class="achievement-box reveal" style="margin-top:40px;">
+        <div class="ach-tag">State Level Achievement</div>
+        <div class="ach-title">🏆 Qualified for <span>State Level Finals</span></div>
+        <p class="ach-desc">Competed in and qualified for the State Level Valorant Finals — placing among the top
+          competitive teams in Rajasthan.</p>
+        <div class="ach-badges"><span class="game-badge gb-gold">State Level Finalist</span><span
+            class="game-badge gb-red">Valorant</span><span class="game-badge gb-cyan">Rajasthan Region</span><span
+            class="game-badge gb-purple">Team Competition</span><span class="game-badge gb-green">IGL &amp;
+            Strategist</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ AI / ML ═══════════════ -->
+  <section id="aiml"
+    style="background:linear-gradient(135deg,rgba(124,58,237,.05),rgba(0,229,255,.02),rgba(0,255,135,.03));">
+    <div class="section-inner">
+      <div class="section-tag reveal">06 // AI &amp; Machine Learning</div>
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:20px;">
+        <div>
+          <h2 class="section-title reveal">AI<span>/</span>ML<br><span>SKILLS</span></h2>
+          <div class="section-sub reveal">AIML ENGINEERING STUDENT · NVIDIA CERTIFIED · ASPIRING PYTHONISTA</div>
+        </div>
+        <div class="reveal" style="display:flex;flex-direction:column;align-items:center;gap:8px;opacity:.85;">
+          <svg viewBox="0 0 24 24" width="110" height="110">
+            <path fill="#76b900"
+              d="M8.948 8.798v-1.43a6.7 6.7 0 0 1 .424-.018c3.922-.124 6.493 3.374 6.493 3.374s-2.774 3.851-5.75 3.851c-.398 0-.787-.062-1.158-.185v-4.346c1.528.185 1.837.857 2.747 2.385l2.04-1.714s-1.492-1.952-4-1.952a6.016 6.016 0 0 0-.796.035m0-4.735v2.138l.424-.027c5.45-.185 9.01 4.47 9.01 4.47s-4.08 4.964-8.33 4.964c-.37 0-.733-.035-1.095-.097v1.325c.3.035.61.062.91.062 3.957 0 6.82-2.023 9.593-4.408.459.371 2.34 1.263 2.73 1.652-2.633 2.208-8.772 3.984-12.253 3.984-.335 0-.653-.018-.971-.053v1.864H24V4.063zm0 10.326v1.131c-3.657-.654-4.673-4.46-4.673-4.46s1.758-1.944 4.673-2.262v1.237H8.94c-1.528-.186-2.73 1.245-2.73 1.245s.68 2.412 2.739 3.11M2.456 10.9s2.164-3.197 6.5-3.533V6.201C4.153 6.59 0 10.653 0 10.653s2.35 6.802 8.948 7.42v-1.237c-4.84-.6-6.492-5.936-6.492-5.936z" />
+          </svg>
+          <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:5px;color:#76b900;font-weight:900;">
+            NVIDIA</div>
+          <div
+            style="font-family:var(--font-mono);font-size:7px;letter-spacing:2px;color:rgba(118,185,0,.6);text-transform:uppercase;">
+            Deep Learning Institute</div>
+        </div>
+      </div>
+      <div class="aiml-layout">
+        <div class="reveal-left">
+          <div class="aiml-cert-card">
+            <div class="cert-logo-row">
+              <div class="cert-org-logo"><svg viewBox="0 0 60 40" width="48" height="32"><text x="30" y="28"
+                    font-family="Arial" font-size="13" font-weight="900" fill="#76b900"
+                    text-anchor="middle">NVIDIA</text></svg></div>
+              <div>
+                <div class="cert-title">NVIDIA Associate — Generative AI &amp; LLMs</div>
+                <div class="cert-org">NVIDIA DEEP LEARNING INSTITUTE</div>
+              </div>
+            </div>
+            <div class="cert-desc">Certified in NVIDIA's Generative AI curriculum covering Large Language Models,
+              diffusion models, transformer architectures, and practical AI application development.</div>
+            <div class="cert-badge">
+              <div class="cert-badge-dot"></div>CERTIFIED ASSOCIATE
+            </div>
+          </div>
+          <div class="aiml-cert-card" style="border-color:rgba(0,229,255,.2);">
+            <div class="cert-logo-row">
+              <div class="cert-org-logo" style="border-color:rgba(0,229,255,.2);background:rgba(0,229,255,.05);"><svg
+                  viewBox="0 0 40 40" width="32" height="32">
+                  <circle cx="20" cy="20" r="16" fill="none" stroke="#00e5ff" stroke-width="1.5" /><text x="20" y="25"
+                    font-family="Arial" font-size="11" font-weight="bold" fill="#00e5ff" text-anchor="middle">AI</text>
+                </svg></div>
+              <div>
+                <div class="cert-title">B.Tech — Artificial Intelligence &amp; Machine Learning</div>
+                <div class="cert-org" style="color:var(--c1);">AIML ENGINEERING · CURRENT STUDENT</div>
+              </div>
+            </div>
+            <div class="cert-desc">Engineering degree with specialization in AI/ML — covering neural networks, deep
+              learning, computer vision, NLP, and data science.</div>
+            <div class="cert-badge"
+              style="background:rgba(0,229,255,.08);border-color:rgba(0,229,255,.25);color:var(--c1);">
+              <div class="cert-badge-dot" style="background:var(--c1);"></div>IN PROGRESS
+            </div>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <div class="aiml-skills-list">
+            <div class="aiml-skill-item">
+              <div class="aiml-icon">🐍</div>
+              <div>
+                <div class="aiml-name">Python</div>
+                <div class="aiml-sub">SCRIPTING · AUTOMATION · DATA PIPELINES</div>
+              </div>
+              <div class="aiml-tag tag-learn">ASPIRING</div>
+            </div>
+            <div class="aiml-skill-item">
+              <div class="aiml-icon">🧠</div>
+              <div>
+                <div class="aiml-name">Generative AI / LLMs</div>
+                <div class="aiml-sub">GPT · LLAMA · STABLE DIFFUSION · NVIDIA</div>
+              </div>
+              <div class="aiml-tag tag-cert">CERTIFIED</div>
+            </div>
+            <div class="aiml-skill-item">
+              <div class="aiml-icon">🤖</div>
+              <div>
+                <div class="aiml-name">AI Video Tools</div>
+                <div class="aiml-sub">RUNWAYML · TOPAZ · KLING · SORA WORKFLOWS</div>
+              </div>
+              <div class="aiml-tag tag-pro">PROFICIENT</div>
+            </div>
+            <div class="aiml-skill-item">
+              <div class="aiml-icon">👁</div>
+              <div>
+                <div class="aiml-name">Computer Vision</div>
+                <div class="aiml-sub">IMAGE PROCESSING · OBJECT DETECTION</div>
+              </div>
+              <div class="aiml-tag tag-learn">LEARNING</div>
+            </div>
+            <div class="aiml-skill-item">
+              <div class="aiml-icon">📊</div>
+              <div>
+                <div class="aiml-name">Data Science</div>
+                <div class="aiml-sub">NUMPY · PANDAS · MATPLOTLIB · JUPYTER</div>
+              </div>
+              <div class="aiml-tag tag-learn">LEARNING</div>
+            </div>
+            <div class="aiml-skill-item">
+              <div class="aiml-icon">⚡</div>
+              <div>
+                <div class="aiml-name">CUDA / GPU Compute</div>
+                <div class="aiml-sub">NVIDIA CUDA · GPU-ACCELERATED RENDERING</div>
+              </div>
+              <div class="aiml-tag tag-cert">NVIDIA CERT</div>
+            </div>
+            <div class="aiml-skill-item">
+              <div class="aiml-icon">🎨</div>
+              <div>
+                <div class="aiml-name">AI-Assisted Creative</div>
+                <div class="aiml-sub">MIDJOURNEY · ADOBE FIREFLY · COMFYUI</div>
+              </div>
+              <div class="aiml-tag tag-pro">PROFICIENT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ GEAR / PC BUILD ═══════════════ -->
+  <section id="gear">
+    <div class="section-inner">
+      <div class="section-tag reveal">07 // My Gear</div>
+      <div class="gear-header-row">
+        <div class="reveal">
+          <h2 class="section-title">BEAST<br><span>PC BUILD</span></h2>
+          <div class="section-sub">THE MACHINE BEHIND THE MAGIC</div>
+        </div>
+        <div class="pc-status reveal">
+          <div class="pc-dot"></div>SYSTEM ONLINE · ALL CORES ACTIVE
+        </div>
+      </div>
+      <div class="pc-visual">
+        <div class="reveal-left">
+          <div class="pc-tower">
+            <div class="pc-tower-header">SUJAL.RIG</div>
+            <div class="pc-tower-sub">// CUSTOM WORKSTATION BUILD 2024</div>
+            <div class="pc-led-row">
+              <div class="led led-r"></div>
+              <div class="led led-g"></div>
+              <div class="led led-b"></div>
+              <div class="led led-p"></div>
+              <div class="led led-r"></div>
+              <div class="led led-b"></div>
+            </div>
+            <div class="pc-vent-row">
+              <div class="vent"></div>
+              <div class="vent"></div>
+              <div class="vent"></div>
+              <div class="vent"></div>
+              <div class="vent"></div>
+              <div class="vent"></div>
+              <div class="vent"></div>
+              <div class="vent"></div>
+              <div class="vent"></div>
+            </div>
+            <div class="bm-label">// BENCHMARK SCORES</div>
+            <div class="bm-row">
+              <div class="bm-header"><span class="bm-name">Cinebench R24 (Multi)</span><span
+                  class="bm-score">62,400</span></div>
+              <div class="bm-bar">
+                <div class="bm-fill" style="--w:98%;"></div>
+              </div>
+            </div>
+            <div class="bm-row">
+              <div class="bm-header"><span class="bm-name">GPU Render (3DMark)</span><span
+                  class="bm-score">EXTREME</span></div>
+              <div class="bm-bar">
+                <div class="bm-fill" style="--w:96%;background:linear-gradient(90deg,#76b900,#00ff87);"></div>
+              </div>
+            </div>
+            <div class="bm-row">
+              <div class="bm-header"><span class="bm-name">RAM Bandwidth</span><span class="bm-score">96 GB/s</span>
+              </div>
+              <div class="bm-bar">
+                <div class="bm-fill" style="--w:90%;background:linear-gradient(90deg,#ff6b00,#ffd700);"></div>
+              </div>
+            </div>
+            <div class="bm-row">
+              <div class="bm-header"><span class="bm-name">NVMe Read Speed</span><span class="bm-score">7,000
+                  MB/s</span></div>
+              <div class="bm-bar">
+                <div class="bm-fill" style="--w:85%;background:linear-gradient(90deg,#7c3aed,#c084fc);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="spec-list reveal-right">
+          <div class="spec-item">
+            <div class="spec-logo"><svg viewBox="0 0 60 30" width="50" height="25"><text x="30" y="21"
+                  font-family="Arial" font-size="13" font-weight="900" fill="#0071c5"
+                  text-anchor="middle">AMD</text></svg></div>
+            <div class="spec-info">
+              <div class="spec-category">PROCESSOR</div>
+              <div class="spec-name">Ryzen 9 7950X</div>
+              <div class="spec-detail">16C / 32T · 5.7GHz Boost · 5nm Zen4</div>
+            </div>
+            <div class="spec-badge sb-cyan">FLAGSHIP</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-logo"><svg viewBox="0 0 60 30" width="50" height="25"><text x="30" y="22"
+                  font-family="Arial" font-size="12" font-weight="900" fill="#76b900"
+                  text-anchor="middle">NVIDIA</text></svg></div>
+            <div class="spec-info">
+              <div class="spec-category">GRAPHICS CARD</div>
+              <div class="spec-name">RTX 5070 Ti</div>
+              <div class="spec-detail">16GB GDDR7 · DLSS 4 · AV1 Encode</div>
+            </div>
+            <div class="spec-badge sb-green">LATEST GEN</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-logo"><svg viewBox="0 0 80 30" width="60" height="25">
+                <rect x="5" y="8" width="70" height="14" rx="2" fill="none" stroke="#00e5ff" stroke-width="1.5" /><text
+                  x="40" y="20" font-family="Arial" font-size="9" font-weight="bold" fill="#00e5ff"
+                  text-anchor="middle">T-FORCE</text>
+              </svg></div>
+            <div class="spec-info">
+              <div class="spec-category">MEMORY</div>
+              <div class="spec-name">32GB T-Force DDR5</div>
+              <div class="spec-detail">6400MHz · XMP 3.0 · RGB · 2x16GB</div>
+            </div>
+            <div class="spec-badge sb-orange">DDR5</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-logo"><svg viewBox="0 0 80 30" width="60" height="25"><text x="40" y="21"
+                  font-family="Arial" font-size="11" font-weight="900" fill="#e63946"
+                  text-anchor="middle">MSI</text></svg></div>
+            <div class="spec-info">
+              <div class="spec-category">MOTHERBOARD</div>
+              <div class="spec-name">MSI B850 Tomahawk</div>
+              <div class="spec-detail">AM5 · PCIe 5.0 · WiFi 7 · DDR5</div>
+            </div>
+            <div class="spec-badge sb-purple">AM5</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-logo"><svg viewBox="0 0 60 30" width="50" height="25">
+                <rect x="10" y="8" width="40" height="14" rx="2" fill="none" stroke="#d4a853" stroke-width="1" /><text
+                  x="30" y="20" font-family="Arial" font-size="8" font-weight="bold" fill="#d4a853"
+                  text-anchor="middle">NVMe</text>
+              </svg></div>
+            <div class="spec-info">
+              <div class="spec-category">STORAGE</div>
+              <div class="spec-name">2TB NVMe SSD</div>
+              <div class="spec-detail">PCIe 4.0 · 7000 MB/s Read · Gen 4</div>
+            </div>
+            <div class="spec-badge sb-cyan">FAST</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ ABOUT ═══════════════ -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="section-tag reveal">09 // About</div>
+      <div class="about-layout">
+        <div class="reveal-left">
+          <h2 class="section-title">ABOUT<br><span>SUJAL</span></h2>
+          <div class="divider-line"></div>
+          <p class="about-bio">A storyteller by instinct and a technician by craft — Sujal Kumar brings cinematic vision
+            to every frame. Specializing in the intersection of technology and visual art, he has spent 3+ years shaping
+            how global tech brands communicate innovation through video.</p>
+          <p class="about-bio">Currently studying AIML Engineering while working as a Senior Video Editor at ASUS India,
+            Sujal bridges the gap between cutting-edge AI technology and world-class creative production.</p>
+          <p class="about-bio">Off-screen, Sujal is a <strong style="color:#ff4655;">competitive gamer</strong> —
+            pushing to <strong style="color:#ff9500;">Tier II in BGMI</strong> and qualifying for the <strong
+              style="color:var(--gold);">State Level Valorant Finals</strong>.</p>
+          <div class="contact-list" style="margin-top:24px;">
+            <a href="mailto:sujalafx23@gmail.com" class="contact-row"><span
+                class="contact-row-icon">✉</span>sujalafx23@gmail.com</a>
+            <div class="contact-row"><span class="contact-row-icon">📍</span>Jaipur, Rajasthan, India</div>
+            <div class="contact-row"><span class="contact-row-icon">��</span>AIML Engineering Student</div>
+            <div class="contact-row"><span class="contact-row-icon">🏆</span>NVIDIA Certified — Gen AI &amp; LLMs</div>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <div class="quote-box" style="margin-top:28px;">
+            <div class="quote-text">"Every frame is a decision. Every cut is a statement. I don't just edit video — I
+              engineer emotion through precision and purpose."</div>
+            <div class="quote-attr">— Sujal Kumar, Creative Philosophy</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ MOMENTS GALLERY ═══════════════════════ -->
+  <section id="moments" class="slide">
+    <div class="moments-title reveal">MOMENTS</div>
+    <div class="moments-sub reveal">TECH EVENTS · INDUSTRY EXPOS · REAL EXPERIENCES</div>
+    <div class="photo-grid">
+
+      <!-- AMD / HELIOS -->
+      <div class="photo-card amd-card reveal">
+        <div class="photo-shine"></div>
+        <div class="photo-img-wrap">
+          <img src="images/photo_amd.png" alt="Sujal at AMD HELIOS Supercomputer" loading="lazy" />
+        </div>
+        <div class="photo-info">
+          <div class="photo-venue">AI Summit India</div>
+          <div class="photo-event">AMD "HELIOS"<br>Supercomputer</div>
+          <div class="photo-badge">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+              <path
+                d="M5.483 10.728H4V7h1.483C7.353 7 8.431 8.079 8.431 9.5v-.029c0 1.393-1.078 1.257-2.948 1.257zm.019-2.85H4.883v1.97h.619c.687 0 1.195-.304 1.195-.981v-.029c0-.638-.508-.96-1.195-.96zm5.168 2.85H9.237V7h1.433C12.28 7 13.5 8.167 13.5 9.5v-.029c0 1.334-1.22 2.007-2.83 2.007zm-.019-2.85h-.512v1.97h.512c.687 0 1.195-.304 1.195-.981v-.029c0-.638-.508-.96-1.195-.96zM14.5 10.728V7H17v.887h-1.617v.638H16.9v.857h-1.517v1.346H14.5zM2 12h20v1H2z" />
+            </svg>
+            AMD · HPC
+          </div>
+        </div>
+      </div>
+
+      <!-- NVIDIA -->
+      <div class="photo-card nvidia-card reveal">
+        <div class="photo-shine"></div>
+        <div class="photo-img-wrap">
+          <img src="images/photo_nvidia.png" alt="Sujal at NVIDIA Booth" loading="lazy" />
+        </div>
+        <div class="photo-info">
+          <div class="photo-venue">AI Summit India</div>
+          <div class="photo-event">NVIDIA<br>Innovation Booth</div>
+          <div class="photo-badge">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+              <path
+                d="M8.948 8.798v-1.43a6.7 6.7 0 0 1 .424-.018c3.922-.124 6.493 3.374 6.493 3.374s-2.774 3.851-5.75 3.851c-.398 0-.787-.062-1.158-.185v-4.346c1.528.185 1.837.857 2.747 2.385l2.04-1.714s-1.492-1.952-4-1.952a6.016 6.016 0 0 0-.796.035m0-4.735v2.138l.424-.027c5.45-.185 9.01 4.47 9.01 4.47s-4.08 4.964-8.33 4.964c-.37 0-.733-.035-1.095-.097v1.325c.3.035.61.062.91.062 3.957 0 6.82-2.023 9.593-4.408.459.371 2.34 1.263 2.73 1.652-2.633 2.208-8.772 3.984-12.253 3.984-.335 0-.653-.018-.971-.053v1.864H24V4.063zm0 10.326v1.131c-3.657-.654-4.673-4.46-4.673-4.46s1.758-1.944 4.673-2.262v1.237H8.94c-1.528-.186-2.73 1.245-2.73 1.245s.68 2.412 2.739 3.11M2.456 10.9s2.164-3.197 6.5-3.533V6.201C4.153 6.59 0 10.653 0 10.653s2.35 6.802 8.948 7.42v-1.237c-4.84-.6-6.492-5.936-6.492-5.936z" />
+            </svg>
+            NVIDIA · AI/ML
+          </div>
+        </div>
+      </div>
+
+      <!-- Snapdragon -->
+      <div class="photo-card snap-card reveal">
+        <div class="photo-shine"></div>
+        <div class="photo-img-wrap">
+          <img src="images/photo_snap.png" alt="Sujal at Snapdragon Booth" loading="lazy" />
+        </div>
+        <div class="photo-info">
+          <div class="photo-venue">AI Summit India</div>
+          <div class="photo-event">Qualcomm<br>Snapdragon</div>
+          <div class="photo-badge">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" />
+            </svg>
+            Snapdragon · SoC
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════ CONTACT ════════════════════════ -->
+  <section id="contact" class="slide">
+    <div class="contact-inner reveal"
+      style="position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;min-height:400px;padding:60px 20px;text-align:center;">
+      <!-- ROG watermark -->
+      <div
+        style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:0;pointer-events:none;opacity:.12;">
+        <svg viewBox="0 0 220 185" width="80" height="68" fill="#cc1111" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M21.3906 5.5833c-1.3467.0115-3.4338.19541-5.9375.97657-1.6024.49851-3.916 2.74203-8.22071 7.0468-2.7764 2.77638-4.9805 5.55279-5.97852 6.54883C.20508 21.17383 0 22.3672 0 22.3672c0 4.7852 3.71875 8.7012 8.32422 8.7012H11.5l-6.5 8H2v4h4.79297L12.5 36l6 7H2v4h20.5l-10-11H16l10 11H28l-10-11h4.5l10 11H44l-10-11h8.5l6.5 7.43164V55H63v-6.5l-6.5-7V27h4.5c4.6055 0 8.32422-3.916 8.32422-8.7012 0 0-.20508-1.19335-1.20313-2.19141-.99804-.99804-3.20215-3.77441-5.97851-6.54882-4.30469-4.30469-6.61817-6.54833-8.2207-7.04688C53.4434.78027 51.3457.5957 49.999.5801 46.3535.5371 39.1895 1.5957 31.5 1.5957c-7.6855 0-14.8398-1.0586-18.4961-1.01172-.3516-.00195-.5449-.00098-.6133 0z" />
+        </svg>
+      </div>
+
+      <!-- Logos row -->
+      <div style="display:flex;gap:22px;align-items:center;justify-content:center;margin-bottom:24px;opacity:.7;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:5px;">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="#cc1111">
+            <path
+              d="M21.3906 5.5833c-1.3467.0115-3.4338.19541-5.9375.97657-1.6024.49851-3.916 2.74203-8.22071 7.0468-2.7764 2.77638-4.9805 5.55279-5.97852 6.54883C.20508 21.17383 0 22.3672 0 22.3672c0 4.7852 3.71875 8.7012 8.32422 8.7012H11.5l-6.5 8H2v4h4.79297L12.5 36l6 7H2v4h20.5l-10-11H16l10 11H28l-10-11h4.5l10 11H44l-10-11h8.5l6.5 7.43164V55H63v-6.5l-6.5-7V27h4.5c4.6055 0 8.32422-3.916 8.32422-8.7012 0 0-.20508-1.19335-1.20313-2.19141-.99804-.99804-3.20215-3.77441-5.97851-6.54882-4.30469-4.30469-6.61817-6.54833-8.2207-7.04688C53.4434.78027 51.3457.5957 49.999.5801 46.3535.5371 39.1895 1.5957 31.5 1.5957c-7.6855 0-14.8398-1.0586-18.4961-1.01172-.3516-.00195-.5449-.00098-.6133 0z" />
+          </svg>
+          <span style="font-size:8px;letter-spacing:2px;opacity:.6;font-family:monospace;">ROG</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:5px;">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="#76b900">
+            <path
+              d="M8.948 8.798v-1.43a6.7 6.7 0 0 1 .424-.018c3.922-.124 6.493 3.374 6.493 3.374s-2.774 3.851-5.75 3.851c-.398 0-.787-.062-1.158-.185v-4.346c1.528.185 1.837.857 2.747 2.385l2.04-1.714s-1.492-1.952-4-1.952a6.016 6.016 0 0 0-.796.035m0-4.735v2.138l.424-.027c5.45-.185 9.01 4.47 9.01 4.47s-4.08 4.964-8.33 4.964c-.37 0-.733-.035-1.095-.097v1.325c.3.035.61.062.91.062 3.957 0 6.82-2.023 9.593-4.408.459.371 2.34 1.263 2.73 1.652-2.633 2.208-8.772 3.984-12.253 3.984-.335 0-.653-.018-.971-.053v1.864H24V4.063zm0 10.326v1.131c-3.657-.654-4.673-4.46-4.673-4.46s1.758-1.944 4.673-2.262v1.237H8.94c-1.528-.186-2.73 1.245-2.73 1.245s.68 2.412 2.739 3.11M2.456 10.9s2.164-3.197 6.5-3.533V6.201C4.153 6.59 0 10.653 0 10.653s2.35 6.802 8.948 7.42v-1.237c-4.84-.6-6.492-5.936-6.492-5.936z" />
+          </svg>
+          <span style="font-size:8px;letter-spacing:2px;opacity:.6;font-family:monospace;">NVIDIA</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:5px;">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="#FF4655">
+            <path
+              d="M23.792 2.152a.252.252 0 0 0-.098.083c-3.384 4.23-6.769 8.46-10.15 12.69-.107.093-.083.288.047.353 2.24 1.08 4.484 2.148 6.724 3.226.11.043.218-.042.218-.156V2.262a.204.204 0 0 0-.074-.156.206.206 0 0 0-.138-.03l-.529.076zM11.883 9.045L.201 21.706a.208.208 0 0 0 .025.29c.08.064.195.063.272-.003l10.63-5.73c.092-.043.144-.143.13-.245L11.883 9.045z" />
+          </svg>
+          <span style="font-size:8px;letter-spacing:2px;opacity:.6;font-family:monospace;">VALORANT</span>
+        </div>
+      </div>
+
+      <div class="roles reveal" style="margin-bottom:18px;">SUJAL KUMAR</div>
+      <div class="roles reveal" style="font-size:.8rem;letter-spacing:4px;opacity:.4;margin-bottom:32px;">AI/ML ·
+        ENGINEERING · GAMING</div>
+
+      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+        <a href="mailto:sujalkumar@example.com" class="contact-btn btn reveal">EMAIL ME</a>
+        <a href="https://github.com/sujalafx23-ux" target="_blank" class="contact-btn btn reveal"
+          style="background:transparent;border:1px solid rgba(255,255,255,.15);">GITHUB</a>
+        <a href="https://www.linkedin.com/in/sujal-kumar-3a598732b/" target="_blank" class="contact-btn btn reveal"
+          style="background:transparent;border:1px solid rgba(255,255,255,.15);">LINKEDIN</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer>
+    <div class="footer-copy">© 2024 <span>SUJAL KUMAR</span> · All Rights Reserved · Jaipur, India</div>
+    <div class="footer-links">
+      <a href="mailto:sujalafx23@gmail.com">Email</a>
+      <a href="#hero">Top</a>
+      <a href="#reel">Reel</a>
+      <a href="#gear">Gear</a>
+    </div>
+  </footer>
+
+  <!-- THREE.JS -->
+  <canvas id="threeCanvas"></canvas>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    /* ─── Navbar scroll ─── */
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    /* ─── Mobile menu ─── */
+    const mBtn = document.getElementById('mobileMenuBtn');
+    const mMenu = document.getElementById('mobileMenu');
+    mBtn.addEventListener('click', () => {
+      mBtn.classList.toggle('open');
+      mMenu.classList.toggle('open');
+    });
+    document.querySelectorAll('.mobile-link').forEach(l => {
+      l.addEventListener('click', () => { mBtn.classList.remove('open'); mMenu.classList.remove('open'); });
+    });
+
+    /* ─── Speed lines build ─── */
+    (function () {
+      const w = document.getElementById('speedWrap');
+      if (!w) return;
+      for (let i = 0; i < 22; i++) {
+        const l = document.createElement('div'); l.className = 'sl';
+        l.style.cssText = `top:${Math.random() * 100}%;animation-delay:${(Math.random() * .8).toFixed(2)}s;animation-duration:${(Math.random() * .3 + .25).toFixed(2)}s;`;
+        w.appendChild(l);
+      }
+    })();
+
+    /* ─── Reel player ─── */
+    (function () {
+      const scenes = document.querySelectorAll('.rs');
+      const names = ['PREMIERE PRO', 'SPEED RAMP', 'AFTER EFFECTS', 'BLENDER 3D', 'COLOR GRADING'];
+      let active = 0, playing = true, timer = null;
+      const fill = document.getElementById('reelFill');
+      const nameEl = document.getElementById('reelSceneName');
+      const timeEl = document.getElementById('reelTimeDisplay');
+      const sceneLabel = document.getElementById('reelSceneLabel');
+      const playBtn = document.getElementById('reelPlayBtn');
+      const DUR = 3500;
+      function setScene(n) {
+        scenes[active].classList.remove('vis');
+        active = n % scenes.length;
+        scenes[active].classList.add('vis');
+        const pct = ((active + 1) / scenes.length * 100);
+        fill.style.width = pct + '%';
+        nameEl.textContent = names[active];
+        sceneLabel.textContent = `SCENE 0${active + 1} / 0${scenes.length}`;
+        const secs = (active + 1) * 42;
+        timeEl.textContent = `${Math.floor(secs / 60)}:${(secs % 60).toString().padStart(2, '0')} / 3:30`;
+      }
+      function start() { timer = setInterval(() => setScene(active + 1), DUR); }
+      function stop() { clearInterval(timer); }
+      start();
+      if (playBtn) {
+        playBtn.addEventListener('click', () => {
+          playing = !playing;
+          playing ? (start(), playBtn.textContent = '❚❚ PAUSE') : (stop(), playBtn.textContent = '▶ PLAY');
+        });
+      }
+    })();
+
+    /* ─── Scroll reveal ─── */
+    (function () {
+      const els = document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale');
+      const ob = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+      }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+      els.forEach(el => ob.observe(el));
+    })();
+
+    /* ─── Skill bars on scroll ─── */
+    (function () {
+      const bars = document.querySelectorAll('.sk-fill');
+      const ob = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            const pct = e.target.style.getPropertyValue('--pct') || '80%';
+            e.target.style.width = pct;
+          }
+        });
+      }, { threshold: .1 });
+      bars.forEach(b => ob.observe(b));
+    })();
+
+    /* ─── Benchmark bars on scroll ─── */
+    (function () {
+      const bars = document.querySelectorAll('.bm-fill');
+      const ob = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            const w = e.target.style.getPropertyValue('--w') || '80%';
+            e.target.style.width = w;
+          }
+        });
+      }, { threshold: .1 });
+      bars.forEach(b => ob.observe(b));
+    })();
+  </script>
+
+
+
+  <!-- ═══════════════ 3D TILT + THREE.JS SCENE ═══════════════ -->
+  <script>
+    /* ================================================================
+       60fps SMOOTH CARD TILT
+       - Per-card RAF loop with delta-time lerp (no stutter)
+       - Mouse + Touch support for mobile
+       - spring-damper physics feel
+    ================================================================ */
+    (function () {
+      'use strict';
+
+      const CARDS = [
+        ...document.querySelectorAll('.game-card'),
+        ...document.querySelectorAll('.aiml-cert-card'),
+        ...document.querySelectorAll('.gear-item'),
+        ...document.querySelectorAll('.skill-item'),
+        ...document.querySelectorAll('.exp-card'),
+        ...document.querySelectorAll('.photo-card'),
+      ];
+
+      const STIFFNESS = 18;   // spring stiffness
+      const DAMPING = 6;    // damping (lower = bouncier, higher = critical)
+      const MAX_TILT = 12;   // degrees
+
+      CARDS.forEach(el => {
+        el.style.willChange = 'transform';
+        el.style.backfaceVisibility = 'hidden';
+
+        // Spring state: position + velocity
+        let rx = 0, ry = 0;   // current rotation
+        let vx = 0, vy = 0;   // velocity
+        let tx = 0, ty = 0;   // target rotation
+        let lift = 0, vLift = 0;
+        let isIn = false;
+        let rafId = null;
+        let lastT = 0;
+
+        function tick(now) {
+          const dt = Math.min((now - lastT) / 1000, 0.05); // cap at 50ms
+          lastT = now;
+
+          // Spring physics: F = -stiffness * (pos - target) - damping * vel
+          const ax = -STIFFNESS * (rx - tx) - DAMPING * vx;
+          const ay = -STIFFNESS * (ry - ty) - DAMPING * vy;
+          const aLift = -STIFFNESS * (lift - (isIn ? -10 : 0)) - DAMPING * vLift;
+
+          vx += ax * dt; rx += vx * dt;
+          vy += ay * dt; ry += vy * dt;
+          vLift += aLift * dt; lift += vLift * dt;
+
+          const scale = 1 + (isIn ? 0.03 : 0) * Math.min(1, Math.abs(lift) / 10);
+          el.style.transform =
+            `perspective(900px) rotateX(${rx.toFixed(3)}deg) rotateY(${ry.toFixed(3)}deg) translateY(${lift.toFixed(3)}px) scale(${scale.toFixed(4)})`;
+
+          // Stop when settled
+          const moving = Math.abs(vx) > 0.001 || Math.abs(vy) > 0.001 ||
+            Math.abs(rx - tx) > 0.005 || Math.abs(ry - ty) > 0.005 ||
+            Math.abs(vLift) > 0.001 || Math.abs(lift) > 0.05;
+
+          if (moving) {
+            rafId = requestAnimationFrame(tick);
+          } else {
+            el.style.transform = isIn
+              ? `perspective(900px) rotateX(${tx.toFixed(3)}deg) rotateY(${ty.toFixed(3)}deg) translateY(-10px) scale(1.03)`
+              : '';
+            rafId = null;
+          }
+        }
+
+        function startRaf() {
+          if (!rafId) {
+            lastT = performance.now();
+            rafId = requestAnimationFrame(tick);
+          }
+        }
+
+        function onEnter() {
+          isIn = true;
+          startRaf();
+        }
+        function onLeave() {
+          isIn = false;
+          tx = 0; ty = 0;
+          startRaf();
+        }
+        function onMove(nx, ny) {
+          tx = -ny * MAX_TILT;
+          ty = nx * MAX_TILT;
+          startRaf();
+        }
+
+        // ── Mouse events ──
+        el.addEventListener('mouseenter', onEnter, { passive: true });
+        el.addEventListener('mouseleave', onLeave, { passive: true });
+        el.addEventListener('mousemove', e => {
+          const r = el.getBoundingClientRect();
+          onMove(
+            (e.clientX - r.left) / r.width * 2 - 1,
+            (e.clientY - r.top) / r.height * 2 - 1
+          );
+        }, { passive: true });
+
+        // ── Touch events (mobile) ──
+        el.addEventListener('touchstart', e => {
+          isIn = true;
+          startRaf();
+        }, { passive: true });
+        el.addEventListener('touchmove', e => {
+          if (e.touches.length !== 1) return;
+          const r = el.getBoundingClientRect();
+          const t = e.touches[0];
+          onMove(
+            (t.clientX - r.left) / r.width * 2 - 1,
+            (t.clientY - r.top) / r.height * 2 - 1
+          );
+        }, { passive: true });
+        el.addEventListener('touchend', () => onLeave(), { passive: true });
+
+      });
+    })();
+
+    /* ─── Three.js 3D Scene ─── */
+    (function () {
+      const canvas = document.getElementById('threeCanvas');
+      if (!canvas || typeof THREE === 'undefined') return;
+
+      canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;';
+
+      const W = window.innerWidth, H = window.innerHeight;
+      const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: 'high-performance' });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+      renderer.setSize(W, H);
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(55, W / H, 0.1, 500);
+      camera.position.set(0, 0, 20);
+
+      // Lights
+      scene.add(new THREE.AmbientLight(0x112244, 3));
+      const pl1 = new THREE.PointLight(0x00e5ff, 5, 80); pl1.position.set(8, 8, 8); scene.add(pl1);
+      const pl2 = new THREE.PointLight(0x7c3aed, 4, 60); pl2.position.set(-8, -6, 6); scene.add(pl2);
+      const pl3 = new THREE.PointLight(0xff6b00, 2, 40); pl3.position.set(0, -8, 4); scene.add(pl3);
+
+      const mat = {
+        cyan: new THREE.MeshStandardMaterial({ color: 0x00e5ff, wireframe: true, transparent: true, opacity: .35 }),
+        purple: new THREE.MeshStandardMaterial({ color: 0x7c3aed, wireframe: true, transparent: true, opacity: .28 }),
+        orange: new THREE.MeshStandardMaterial({ color: 0xff6b00, wireframe: true, transparent: true, opacity: .28 }),
+        green: new THREE.MeshStandardMaterial({ color: 0x00ff87, wireframe: true, transparent: true, opacity: .22 }),
+        white: new THREE.MeshStandardMaterial({ color: 0xffffff, wireframe: true, transparent: true, opacity: .12 }),
+      };
+
+      const cage = new THREE.Mesh(new THREE.DodecahedronGeometry(11, 0), mat.white);
+      scene.add(cage);
+      const tk1 = new THREE.Mesh(new THREE.TorusKnotGeometry(3.2, 0.45, 100, 14, 2, 3), mat.cyan);
+      tk1.position.set(-7, 2, -2); scene.add(tk1);
+      const tk2 = new THREE.Mesh(new THREE.TorusKnotGeometry(2.2, 0.32, 80, 12, 3, 5), mat.orange);
+      tk2.position.set(7, -3, -3); scene.add(tk2);
+      const ico = new THREE.Mesh(new THREE.IcosahedronGeometry(2.5, 1), mat.purple);
+      ico.position.set(5, 5, -5); scene.add(ico);
+      const oct = new THREE.Mesh(new THREE.OctahedronGeometry(1.8, 2), mat.green);
+      oct.position.set(-6, -5, -3); scene.add(oct);
+      const ring = new THREE.Mesh(new THREE.TorusGeometry(7.5, 0.12, 8, 90), mat.white);
+      ring.rotation.x = Math.PI * 0.35; scene.add(ring);
+
+      const pGeo = new THREE.BufferGeometry();
+      const pN = 300;
+      const pPos = new Float32Array(pN * 3);
+      for (let i = 0; i < pN * 3; i++) pPos[i] = (Math.random() - 0.5) * 55;
+      pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+      scene.add(new THREE.Points(pGeo, new THREE.PointsMaterial({ color: 0x00e5ff, size: 0.07, transparent: true, opacity: .45 })));
+
+      const spheres = Array.from({ length: 6 }, (_, i) => {
+        const colors = [0x00e5ff, 0x7c3aed, 0xff6b00, 0x00ff87];
+        const m = new THREE.Mesh(
+          new THREE.SphereGeometry(0.14 + Math.random() * 0.18, 7, 7),
+          new THREE.MeshStandardMaterial({ color: colors[i % 4], emissive: colors[i % 4], emissiveIntensity: .9, transparent: true, opacity: .85 })
+        );
+        m.position.set((Math.random() - .5) * 15, (Math.random() - .5) * 9, (Math.random() - .5) * 5);
+        m._phase = Math.random() * Math.PI * 2;
+        m._spd = 0.3 + Math.random() * 0.45;
+        scene.add(m); return m;
+      });
+
+      let mx = 0, my = 0;
+      window.addEventListener('mousemove', e => {
+        mx = (e.clientX / window.innerWidth - 0.5) * 2;
+        my = (e.clientY / window.innerHeight - 0.5) * 2;
+      }, { passive: true });
+      // Mobile touch parallax
+      window.addEventListener('touchmove', e => {
+        if (!e.touches[0]) return;
+        mx = (e.touches[0].clientX / window.innerWidth - 0.5) * 2;
+        my = (e.touches[0].clientY / window.innerHeight - 0.5) * 2;
+      }, { passive: true });
+
+      let t = 0, camX = 0, camY = 0;
+      renderer.setAnimationLoop(function () {
+        t += 0.007;
+        cage.rotation.x = t * 0.04; cage.rotation.y = t * 0.06;
+        tk1.rotation.x = t * 0.35; tk1.rotation.y = t * 0.55;
+        tk2.rotation.x = -t * 0.45; tk2.rotation.y = t * 0.65;
+        ico.rotation.x = t * 0.28; ico.rotation.y = t * 0.38;
+        oct.rotation.x = -t * 0.38; oct.rotation.z = t * 0.42;
+        ring.rotation.z = t * 0.12;
+        spheres.forEach(s => { s.position.y += Math.sin(t * s._spd + s._phase) * 0.012; });
+        camX += (mx * 2.5 - camX) * 0.03;
+        camY += (-my * 1.8 - camY) * 0.03;
+        camera.position.x = camX;
+        camera.position.y = camY;
+        camera.position.z = 20 - window.scrollY * 0.003;
+        camera.lookAt(0, 0, 0);
+        pl1.position.x = Math.sin(t * 0.45) * 7; pl1.position.y = Math.cos(t * 0.35) * 5;
+        pl2.position.x = Math.cos(t * 0.55) * 7; pl2.position.y = Math.sin(t * 0.45) * 5;
+        renderer.render(scene, camera);
+      });
+
+      window.addEventListener('resize', () => {
+        const nw = window.innerWidth, nh = window.innerHeight;
+        camera.aspect = nw / nh;
+        camera.updateProjectionMatrix();
+        renderer.setSize(nw, nh);
+      });
+    })();
+  </script>
+</body>
+
+</html>

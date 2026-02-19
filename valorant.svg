@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- Valorant V chevron mark -->
+  <g fill="#FF4655">
+    <!-- Left blade -->
+    <polygon points="180,160 440,160 512,560 320,720"/>
+    <!-- Right top piece -->
+    <polygon points="844,160 620,160 700,400 820,280"/>
+    <!-- Right lower piece -->
+    <polygon points="620,160 700,400 820,280 740,480 620,380"/>
+  </g>
+  <!-- VALORANT text -->
+  <text x="512" y="880" font-family="Arial Black, sans-serif" font-size="130" font-weight="900" fill="#FF4655" text-anchor="middle" letter-spacing="-2">VALORANT</text>
+</svg>
