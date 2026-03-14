@@ -4,6 +4,14 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Sujal Kumar — Video Editor & Motion Designer</title>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SSY5060MQT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SSY5060MQT');
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@100;300;400&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
@@ -556,7 +564,7 @@ footer {
     <li><a href="#gear">Gear</a></li>
     <li><a href="#about">About</a></li>
   </ul>
-  <a href="mailto:sujalafx23@gmail.com" class="nav-hire">Hire Me</a>
+  <a href="/cdn-cgi/l/email-protection#7605031c171a17100e444536111b171f1a5815191b" class="nav-hire">Hire Me</a>
   <button class="hamburger" id="hamburger" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
@@ -570,7 +578,7 @@ footer {
   <a href="#experience" class="mm-lnk">Work</a>
   <a href="#gear"   class="mm-lnk">Gear</a>
   <a href="#about"  class="mm-lnk">About</a>
-  <a href="mailto:sujalafx23@gmail.com" class="mm-lnk">Hire Me</a>
+  <a href="/cdn-cgi/l/email-protection#deadabb4bfb2bfb8a6eced9eb9b3bfb7b2f0bdb1b3" class="mm-lnk">Hire Me</a>
 </div>
 
 <!-- ═══════════════ HERO ═══════════════ -->
@@ -589,7 +597,7 @@ footer {
 
   <div class="hero-cta">
     <a href="#reel" class="btn-gold">View Reel</a>
-    <a href="mailto:sujalafx23@gmail.com" class="btn-ghost">Get In Touch</a>
+    <a href="/cdn-cgi/l/email-protection#0477716e656865627c3637446369656d682a676b69" class="btn-ghost">Get In Touch</a>
   </div>
 
   <div class="hero-stats">
@@ -819,7 +827,7 @@ footer {
         <cite>— Sujal Kumar</cite>
       </div>
 
-      <a href="mailto:sujalafx23@gmail.com" class="btn-gold">Get In Touch</a>
+      <a href="/cdn-cgi/l/email-protection#1b686e717a777a7d6329285b7c767a727735787476" class="btn-gold">Get In Touch</a>
     </div>
 
     <div class="about-right reveal">
@@ -834,7 +842,7 @@ footer {
       </table>
 
       <div class="about-socials">
-        <a href="mailto:sujalafx23@gmail.com">sujalafx23@gmail.com</a>
+        <a href="/cdn-cgi/l/email-protection#b8cbcdd2d9d4d9dec08a8bf8dfd5d9d1d496dbd7d5"><span class="__cf_email__" data-cfemail="1c6f69767d707d7a642e2f5c7b717d7570327f7371">[email&#160;protected]</span></a>
         <a href="https://github.com/sujalafx23-ux" target="_blank">github.com/sujalafx23-ux</a>
         <a href="https://www.linkedin.com/in/sujal-kumar-3a598732b/" target="_blank">linkedin / sujal-kumar</a>
       </div>
@@ -847,13 +855,13 @@ footer {
   <div class="footer-brand">Sujal Kumar</div>
   <div class="footer-copy">© 2024 · All Rights Reserved · Jaipur, India</div>
   <div class="footer-links">
-    <a href="mailto:sujalafx23@gmail.com">Email</a>
+    <a href="/cdn-cgi/l/email-protection#fb888e919a979a9d83c9c8bb9c969a9297d5989496">Email</a>
     <a href="https://github.com/sujalafx23-ux" target="_blank">GitHub</a>
     <a href="https://www.linkedin.com/in/sujal-kumar-3a598732b/" target="_blank">LinkedIn</a>
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* Mobile Menu */
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
@@ -873,20 +881,22 @@ const ro = new IntersectionObserver((entries) => {
       ro.unobserve(e.target);
     }
   });
-}, { threshold: 0.08 });
+}, { threshold: 0.12 });
 reveals.forEach(el => ro.observe(el));
 
 /* Skill Bars */
 const skillRows = document.querySelectorAll('.skill-row');
-const so = new IntersectionObserver((entries) => {
+const skillObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
-      e.target.querySelector('.skill-fill').style.width = e.target.dataset.pct + '%';
-      so.unobserve(e.target);
+      const fill = e.target.querySelector('.skill-fill');
+      const pct  = e.target.dataset.pct;
+      if (fill && pct) fill.style.width = pct + '%';
+      skillObs.unobserve(e.target);
     }
   });
-}, { threshold: 0.15 });
-skillRows.forEach(el => so.observe(el));
+}, { threshold: 0.3 });
+skillRows.forEach(el => skillObs.observe(el));
 </script>
 </body>
 </html>
