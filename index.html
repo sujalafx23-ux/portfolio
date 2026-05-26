@@ -1,902 +1,457 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Sujal Kumar — Video Editor & Motion Designer</title>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SSY5060MQT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-SSY5060MQT');
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@100;300;400&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sujal Kumar — Senior Video Editor & Motion Designer</title>
+  
+  <meta name="description" content="Cinematic portfolio of Sujal Kumar, Senior Video Editor & Motion Designer at ASUS India & Qualcomm SnapDragon. Over 1 Billion total views and 200+ projects delivered."/>
+  <meta name="keywords" content="Video Editor, Motion Designer, ASUS India, ROG, Qualcomm, Snapdragon, DaVinci Resolve, Premiere Pro, After Effects, Esports, Gaming Video Essay"/>
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Sujal Kumar — Senior Video Editor & Motion Designer"/>
+  <meta property="og:description" content="Lead video editor for ASUS India's digital ecosystem. Cinematic storytelling & motion design for top technology brands."/>
+  <meta property="og:type" content="website"/>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SSY5060MQT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SSY5060MQT');
+  </script>
 
-<style>
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@100;300;400;600&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 
-:root {
-  --parchment:  #F2E8D5;
-  --parchment2: #E8D9BC;
-  --sepia:      #C4A882;
-  --brown:      #5C3D1E;
-  --dark:       #2B1A0D;
-  --ink:        #1A0F05;
-  --gold:       #B8892A;
-  --gold-light: #D4A843;
-  --muted:      #7A6248;
-  --rule:       #C4A882;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--parchment);
-  color: var(--ink);
-  font-family: 'Libre Baskerville', Georgia, serif;
-  font-size: 15px;
-  line-height: 1.75;
-  overflow-x: hidden;
-}
-
-body::before {
-  content: '';
-  position: fixed; inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-  opacity: 0.032;
-  pointer-events: none;
-  z-index: 9999;
-}
-
-/* HELPERS */
-.rule-line {
-  display: flex; align-items: center; gap: 14px;
-  margin-bottom: 52px; color: var(--muted);
-}
-.rule-line::before, .rule-line::after {
-  content: ''; flex:1; height:1px; background: var(--rule);
-}
-.rule-label {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px; font-weight: 300;
-  letter-spacing: 0.38em; text-transform: uppercase;
-  white-space: nowrap; color: var(--muted);
-}
-
-/* TOP BAR */
-.topbar {
-  background: var(--dark); color: var(--sepia);
-  text-align: center; padding: 9px 20px;
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px; font-weight: 300;
-  letter-spacing: 0.38em; text-transform: uppercase;
-}
-
-/* NAV */
-nav {
-  position: sticky; top: 0; z-index: 200;
-  background: var(--parchment);
-  border-bottom: 1px solid var(--rule);
-  padding: 0 clamp(20px,5vw,72px);
-  display: flex; align-items: center; justify-content: space-between;
-  height: 62px;
-}
-.nav-logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 18px; font-weight: 700;
-  color: var(--ink); text-decoration: none;
-}
-.nav-logo span { color: var(--gold); font-style: italic; }
-.nav-links { display: flex; gap: 36px; list-style: none; }
-.nav-links a {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px; font-weight: 400;
-  letter-spacing: 0.28em; text-transform: uppercase;
-  text-decoration: none; color: var(--muted);
-  position: relative; transition: color 0.2s;
-}
-.nav-links a::after {
-  content: ''; position: absolute;
-  bottom: -3px; left: 0; right: 0;
-  height: 1px; background: var(--gold);
-  transform: scaleX(0); transform-origin: left;
-  transition: transform 0.3s;
-}
-.nav-links a:hover { color: var(--brown); }
-.nav-links a:hover::after { transform: scaleX(1); }
-.nav-hire {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px; font-weight: 400;
-  letter-spacing: 0.28em; text-transform: uppercase;
-  text-decoration: none; color: var(--parchment);
-  background: var(--dark); padding: 9px 22px;
-  transition: background 0.2s;
-}
-.nav-hire:hover { background: var(--brown); }
-.hamburger {
-  display: none; flex-direction: column; gap: 5px;
-  cursor: pointer; border: none; background: none; padding: 6px;
-}
-.hamburger span { display: block; width: 24px; height: 1px; background: var(--ink); }
-
-/* MOBILE MENU */
-.mobile-menu {
-  display: none; position: fixed; inset: 0; z-index: 300;
-  background: var(--dark);
-  flex-direction: column; align-items: center; justify-content: center; gap: 28px;
-}
-.mobile-menu.open { display: flex; }
-.mobile-menu a {
-  font-family: 'Playfair Display', serif;
-  font-size: 30px; font-weight: 400; font-style: italic;
-  text-decoration: none; color: var(--parchment);
-  transition: color 0.2s;
-}
-.mobile-menu a:hover { color: var(--gold); }
-.mobile-close {
-  position: absolute; top: 22px; right: 24px;
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase;
-  color: var(--sepia); background: none; border: none; cursor: pointer;
-}
-
-/* HERO */
-#hero {
-  background: var(--dark); color: var(--parchment);
-  padding: clamp(64px,12vw,100px) clamp(20px,5vw,72px) clamp(56px,10vw,80px);
-  text-align: center; position: relative; overflow: hidden;
-}
-#hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background:
-    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(196,168,130,0.06) 39px, rgba(196,168,130,0.06) 40px),
-    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(196,168,130,0.06) 39px, rgba(196,168,130,0.06) 40px);
-}
-.hero-fraktur {
-  font-family: 'UnifrakturMaguntia', cursive;
-  font-size: clamp(13px,2.5vw,18px); color: var(--gold);
-  letter-spacing: 0.1em; margin-bottom: 28px;
-  position: relative;
-  opacity: 0; animation: fadeUp 1s 0.15s forwards;
-}
-.hero-name {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(58px,14vw,165px);
-  font-weight: 900; line-height: 0.88;
-  color: var(--parchment); position: relative;
-  opacity: 0; animation: fadeUp 1s 0.35s forwards;
-}
-.hero-name em { font-style: italic; color: var(--gold-light); display: block; }
-.hero-divider {
-  display: flex; align-items: center; justify-content: center; gap: 18px;
-  margin: 30px auto;
-  opacity: 0; animation: fadeUp 1s 0.5s forwards;
-  position: relative;
-}
-.hero-divider::before, .hero-divider::after {
-  content: ''; height: 1px;
-  width: clamp(32px,7vw,110px);
-  background: linear-gradient(to var(--dir, right), transparent, var(--gold));
-}
-.hero-divider::before { --dir: left; }
-.hero-div-text {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--sepia);
-}
-.hero-tagline {
-  font-family: 'Libre Baskerville', serif; font-style: italic;
-  font-size: clamp(14px,2.2vw,19px); color: var(--sepia);
-  max-width: 560px; margin: 0 auto 38px;
-  line-height: 1.65; position: relative;
-  opacity: 0; animation: fadeUp 1s 0.63s forwards;
-}
-.hero-cta {
-  display: flex; gap: 18px; justify-content: center; flex-wrap: wrap;
-  margin-bottom: 56px; position: relative;
-  opacity: 0; animation: fadeUp 1s 0.78s forwards;
-}
-.btn-gold {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase;
-  text-decoration: none; padding: 13px 28px;
-  background: var(--gold); color: var(--dark); font-weight: 400;
-  transition: background 0.2s;
-}
-.btn-gold:hover { background: var(--gold-light); }
-.btn-ghost {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase;
-  text-decoration: none; padding: 12px 28px;
-  border: 1px solid var(--sepia); color: var(--sepia); font-weight: 400;
-  transition: border-color 0.2s, color 0.2s;
-}
-.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
-.hero-stats {
-  display: flex; justify-content: center;
-  gap: clamp(24px,6vw,80px); flex-wrap: wrap;
-  padding-top: 44px;
-  border-top: 1px solid rgba(196,168,130,0.18);
-  position: relative;
-  opacity: 0; animation: fadeUp 1s 0.95s forwards;
-}
-.stat { text-align: center; }
-.stat-num {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(30px,6vw,52px); font-weight: 700;
-  color: var(--gold-light); line-height: 1;
-}
-.stat-lbl {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 8px; letter-spacing: 0.28em;
-  text-transform: uppercase; color: var(--sepia); margin-top: 7px;
-}
-
-@keyframes fadeUp {
-  from { opacity:0; transform: translateY(26px); }
-  to   { opacity:1; transform: translateY(0); }
-}
-
-/* SECTIONS */
-section { padding: clamp(56px,10vw,112px) clamp(20px,5vw,72px); }
-.section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(36px,7vw,78px); font-weight: 700; line-height: 1.05;
-}
-.section-title em { font-style: italic; color: var(--gold); }
-
-/* REEL */
-#reel { background: var(--parchment2); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
-.reel-intro {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 40px; align-items: end; margin-bottom: 48px;
-}
-.reel-sub-text {
-  font-family: 'Libre Baskerville', serif; font-style: italic;
-  color: var(--muted); font-size: 15px; line-height: 1.8; align-self: end;
-}
-.reel-period {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase;
-  color: var(--muted); margin-top: 12px;
-}
-.reel-cards {
-  display: grid; grid-template-columns: repeat(3,1fr);
-  border: 1px solid var(--rule); gap: 0;
-}
-.reel-card {
-  padding: 32px 26px;
-  border-right: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-  position: relative; overflow: hidden;
-  transition: background 0.28s;
-}
-.reel-card:nth-child(3n) { border-right: none; }
-.reel-card:nth-child(n+4) { border-bottom: none; }
-.reel-card::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: var(--dark);
-  opacity: 0; transition: opacity 0.28s;
-  z-index: 0;
-}
-.reel-card:hover::after { opacity: 1; }
-.reel-card > * { position: relative; z-index: 1; }
-.rc-num {
-  font-family: 'UnifrakturMaguntia', cursive;
-  font-size: 22px; color: var(--gold);
-  display: block; margin-bottom: 10px;
-  transition: color 0.28s;
-}
-.rc-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px; font-weight: 700; color: var(--brown);
-  margin-bottom: 8px; transition: color 0.28s;
-}
-.rc-desc {
-  font-family: 'Libre Baskerville', serif; font-style: italic;
-  font-size: 12px; color: var(--muted); line-height: 1.65;
-  margin-bottom: 12px; transition: color 0.28s;
-}
-.rc-tags {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--sepia); transition: color 0.28s;
-}
-.reel-card:hover .rc-title,
-.reel-card:hover .rc-desc { color: var(--parchment); }
-.reel-card:hover .rc-tags { color: var(--gold); }
-
-/* SKILLS */
-#skills { background: var(--dark); color: var(--parchment); }
-#skills .rule-line::before,
-#skills .rule-line::after { background: rgba(196,168,130,0.25); }
-.skills-layout {
-  display: grid; grid-template-columns: 300px 1fr;
-  gap: clamp(40px,8vw,96px); align-items: start;
-}
-.skills-intro .section-title { color: var(--parchment); }
-.skills-intro p {
-  font-family: 'Libre Baskerville', serif; font-style: italic;
-  font-size: 13px; color: var(--sepia); line-height: 1.85; margin-top: 20px;
-}
-.skills-grid { display: flex; flex-direction: column; }
-.skill-row {
-  display: grid; grid-template-columns: 1fr 160px 40px;
-  align-items: center; gap: 18px;
-  padding: 15px 0;
-  border-bottom: 1px solid rgba(196,168,130,0.12);
-}
-.skill-name {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--parchment2);
-}
-.skill-track { height: 1px; background: rgba(196,168,130,0.18); position: relative; }
-.skill-fill {
-  position: absolute; left:0; top:0; bottom:0;
-  background: var(--gold); width: 0;
-  transition: width 1.4s cubic-bezier(.4,0,.2,1);
-}
-.skill-pct {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px; letter-spacing: 0.12em; color: var(--gold); text-align: right;
-}
-
-/* EXPERIENCE */
-#experience { background: var(--parchment); }
-.exp-top {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 48px; align-items: end; margin-bottom: 56px;
-}
-.exp-sub {
-  font-family: 'Libre Baskerville', serif; font-style: italic;
-  font-size: 16px; color: var(--muted); line-height: 1.7;
-}
-.exp-list { display: flex; flex-direction: column; }
-.exp-item {
-  display: grid;
-  grid-template-columns: 160px 1fr auto;
-  gap: 32px; align-items: start;
-  padding: 44px 0;
-  border-top: 1px solid var(--rule);
-}
-.exp-item:last-child { border-bottom: 1px solid var(--rule); }
-.exp-period {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--muted); line-height: 1.6; padding-top: 4px;
-}
-.exp-badge {
-  display: inline-block; margin-top: 10px;
-  font-size: 7px; letter-spacing: 0.22em; text-transform: uppercase;
-  padding: 3px 8px; border: 1px solid var(--gold); color: var(--gold);
-}
-.exp-co {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(22px,3.5vw,30px); font-weight: 700; color: var(--brown); margin-bottom: 4px;
-}
-.exp-role {
-  font-family: 'Libre Baskerville', serif; font-style: italic;
-  font-size: 14px; color: var(--muted); margin-bottom: 14px;
-}
-.exp-desc { font-size: 13px; color: var(--muted); line-height: 1.85; max-width: 460px; }
-.exp-tags-wrap { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; padding-top: 4px; }
-.exp-tag {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 7px; letter-spacing: 0.2em; text-transform: uppercase;
-  border: 1px solid var(--rule); color: var(--muted); padding: 4px 10px; white-space: nowrap;
-}
-
-/* GEAR */
-#gear { background: var(--parchment2); border-top: 1px solid var(--rule); }
-.gear-intro {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 48px; align-items: end; margin-bottom: 52px;
-}
-.gear-sub {
-  font-family: 'Libre Baskerville', serif; font-style: italic;
-  font-size: 15px; color: var(--muted); line-height: 1.8;
-}
-.gear-grid {
-  display: grid; grid-template-columns: repeat(5,1fr);
-  border: 1px solid var(--rule);
-}
-.gear-cell {
-  padding: 30px 22px;
-  border-right: 1px solid var(--rule);
-  transition: background 0.25s;
-}
-.gear-cell:last-child { border-right: none; }
-.gear-cell:hover { background: var(--dark); }
-.gear-cell:hover .gc-brand { color: var(--gold); }
-.gear-cell:hover .gc-name,
-.gear-cell:hover .gc-spec { color: var(--parchment); }
-.gc-brand {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 8px; letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 10px; transition: color 0.25s;
-}
-.gc-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 17px; font-weight: 700; color: var(--brown);
-  margin-bottom: 6px; transition: color 0.25s;
-}
-.gc-spec {
-  font-family: 'Libre Baskerville', serif; font-style: italic;
-  font-size: 11px; color: var(--muted); line-height: 1.6; transition: color 0.25s;
-}
-
-/* ABOUT */
-#about { background: var(--dark); color: var(--parchment); }
-#about .rule-line::before,
-#about .rule-line::after { background: rgba(196,168,130,0.22); }
-.about-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: clamp(40px,8vw,96px); align-items: start;
-}
-.about-left .section-title { color: var(--parchment); }
-.about-left p {
-  font-size: 14px; color: var(--sepia); line-height: 1.9; margin: 18px 0;
-}
-.about-quote {
-  border-left: 2px solid var(--gold);
-  padding: 4px 0 4px 24px; margin: 32px 0;
-}
-.about-quote p {
-  font-family: 'Playfair Display', serif; font-style: italic;
-  font-size: clamp(15px,2.2vw,20px); color: var(--parchment2); line-height: 1.55;
-}
-.about-quote cite {
-  font-family: 'Josefin Sans', sans-serif; font-style: normal;
-  font-size: 8px; letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--gold); display: block; margin-top: 14px;
-}
-.about-table { width: 100%; border-collapse: collapse; margin-bottom: 32px; }
-.about-table tr { border-bottom: 1px solid rgba(196,168,130,0.12); }
-.about-table td { padding: 13px 0; vertical-align: top; font-size: 13px; }
-.about-table td:first-child {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 8px; letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--sepia); width: 110px; padding-right: 14px; padding-top: 16px;
-}
-.about-table td:last-child { font-family: 'Libre Baskerville', serif; color: var(--parchment2); }
-.about-socials { display: flex; flex-direction: column; gap: 10px; }
-.about-socials a {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
-  text-decoration: none; color: var(--sepia);
-  display: flex; align-items: center; gap: 10px;
-  transition: color 0.2s;
-}
-.about-socials a::before { content: '—'; color: var(--gold); }
-.about-socials a:hover { color: var(--gold); }
-
-/* FOOTER */
-footer {
-  background: var(--ink);
-  padding: 36px clamp(20px,5vw,72px);
-  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px;
-  border-top: 1px solid rgba(196,168,130,0.12);
-}
-.footer-brand {
-  font-family: 'UnifrakturMaguntia', cursive;
-  font-size: 26px; color: var(--gold);
-}
-.footer-copy {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 8px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--muted);
-}
-.footer-links { display: flex; gap: 24px; }
-.footer-links a {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 8px; letter-spacing: 0.22em; text-transform: uppercase;
-  text-decoration: none; color: var(--muted); transition: color 0.2s;
-}
-.footer-links a:hover { color: var(--gold); }
-
-/* REVEAL */
-.reveal { opacity:0; transform: translateY(22px); transition: opacity .85s ease, transform .85s ease; }
-.reveal.in { opacity:1; transform: none; }
-
-/* ============================================================
-   RESPONSIVE
-============================================================ */
-@media (max-width: 1024px) {
-  .reel-cards { grid-template-columns: repeat(2,1fr); }
-  .reel-card:nth-child(3n)  { border-right: 1px solid var(--rule); }
-  .reel-card:nth-child(2n)  { border-right: none; }
-  .reel-card:nth-child(n+4) { border-bottom: 1px solid var(--rule); }
-  .reel-card:nth-child(5),
-  .reel-card:nth-child(6)   { border-bottom: none; }
-  .skills-layout { grid-template-columns: 1fr; }
-  .skill-row { grid-template-columns: 1fr 120px 40px; }
-  .gear-grid { grid-template-columns: repeat(3,1fr); }
-  .gear-cell:nth-child(3) { border-right: none; }
-  .gear-cell:nth-child(-n+3) { border-bottom: 1px solid var(--rule); }
-  .gear-cell:nth-child(4),
-  .gear-cell:nth-child(5)   { border-bottom: none; }
-}
-
-@media (max-width: 768px) {
-  nav { padding: 0 20px; }
-  .nav-links, .nav-hire { display: none; }
-  .hamburger { display: flex; }
-  .reel-intro { grid-template-columns: 1fr; gap: 12px; }
-  .exp-top    { grid-template-columns: 1fr; gap: 12px; }
-  .gear-intro { grid-template-columns: 1fr; gap: 12px; }
-  .exp-item   { grid-template-columns: 1fr; gap: 12px; }
-  .exp-tags-wrap { flex-direction: row; flex-wrap: wrap; align-items: flex-start; }
-  .about-grid { grid-template-columns: 1fr; gap: 48px; }
-  footer { flex-direction: column; align-items: flex-start; }
-}
-
-@media (max-width: 560px) {
-  .reel-cards { grid-template-columns: 1fr; }
-  .reel-card  { border-right: none !important; border-bottom: 1px solid var(--rule) !important; }
-  .reel-card:last-child { border-bottom: none !important; }
-  .gear-grid  { grid-template-columns: 1fr 1fr; }
-  .gear-cell:nth-child(2n) { border-right: none; }
-  .gear-cell  { border-bottom: 1px solid var(--rule); }
-  .gear-cell:last-child,
-  .gear-cell:nth-last-child(2):nth-child(odd) { border-bottom: none; }
-  .skill-row  { grid-template-columns: 1fr 70px 36px; gap: 10px; }
-  .hero-name  { font-size: clamp(52px,17vw,160px); }
-}
-</style>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">✦ &nbsp; Jaipur, India &nbsp;·&nbsp; Senior Video Editor &amp; Motion Designer &nbsp;·&nbsp; Est. 2020 &nbsp; ✦</div>
-
-<!-- NAV -->
-<nav>
-  <a href="#hero" class="nav-logo">Sujal <span>Kumar</span></a>
-  <ul class="nav-links">
-    <li><a href="#reel">Reel</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#experience">Work</a></li>
-    <li><a href="#gear">Gear</a></li>
-    <li><a href="#about">About</a></li>
-  </ul>
-  <a href="/cdn-cgi/l/email-protection#7605031c171a17100e444536111b171f1a5815191b" class="nav-hire">Hire Me</a>
-  <button class="hamburger" id="hamburger" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" id="mobileClose">✕ &nbsp; Close</button>
-  <a href="#reel"   class="mm-lnk">Reel</a>
-  <a href="#skills" class="mm-lnk">Skills</a>
-  <a href="#experience" class="mm-lnk">Work</a>
-  <a href="#gear"   class="mm-lnk">Gear</a>
-  <a href="#about"  class="mm-lnk">About</a>
-  <a href="/cdn-cgi/l/email-protection#deadabb4bfb2bfb8a6eced9eb9b3bfb7b2f0bdb1b3" class="mm-lnk">Hire Me</a>
-</div>
-
-<!-- ═══════════════ HERO ═══════════════ -->
-<section id="hero">
-  <div class="hero-fraktur">Sujal Kumar — The Craft of Moving Images</div>
-
-  <h1 class="hero-name">SUJAL<br><em>Kumar</em></h1>
-
-  <div class="hero-divider">
-    <div class="hero-div-text">Senior Video Editor &nbsp;·&nbsp; Motion Designer &nbsp;·&nbsp; 3D Artist</div>
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <span>✦ &nbsp; JAIPUR, INDIA &nbsp;·&nbsp; SENIOR VIDEO EDITOR &amp; MOTION DESIGNER &nbsp;·&nbsp; EST. 2020 &nbsp; ✦</span>
   </div>
 
-  <p class="hero-tagline">
-    Cinematic storyteller crafting high-impact visual narratives for global technology brands — shaping the identity of ASUS India &amp; Qualcomm.
-  </p>
+  <!-- STICKY HEADER / NAVIGATION -->
+  <header>
+    <nav>
+      <a href="#hero" class="nav-logo magnetic-target">Sujal <span>Kumar</span></a>
+      
+      <ul class="nav-links">
+        <li><a href="#works" class="magnetic-target">Selected Works</a></li>
+        <li><a href="#skills" class="magnetic-target">Skills</a></li>
+        <li><a href="#experience" class="magnetic-target">Experience</a></li>
+        <li><a href="#gear" class="magnetic-target">Gear</a></li>
+        <li><a href="#about" class="magnetic-target">About</a></li>
+      </ul>
 
-  <div class="hero-cta">
-    <a href="#reel" class="btn-gold">View Reel</a>
-    <a href="/cdn-cgi/l/email-protection#0477716e656865627c3637446369656d682a676b69" class="btn-ghost">Get In Touch</a>
+      <div class="nav-actions">
+        <!-- THEME MODE SWITCHER -->
+        <button class="theme-toggle magnetic-target" id="themeToggle" aria-label="Toggle visual theme">
+          <span class="toggle-icon">☀️</span>
+        </button>
+        <a href="#contact" class="nav-hire magnetic-target">Hire Me</a>
+      </div>
+
+      <button class="hamburger magnetic-target" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- MOBILE SLIDEOUT MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">✕ &nbsp; Close</button>
+    <div class="mobile-menu-links">
+      <a href="#works" class="mm-lnk">Selected Works</a>
+      <a href="#skills" class="mm-lnk">Skills</a>
+      <a href="#experience" class="mm-lnk">Work History</a>
+      <a href="#gear" class="mm-lnk">Workstation</a>
+      <a href="#about" class="mm-lnk">About Storyteller</a>
+      <a href="#contact" class="mm-lnk hire-highlight">Hire Me</a>
+    </div>
   </div>
 
-  <div class="hero-stats">
-    <div class="stat"><div class="stat-num">3+</div><div class="stat-lbl">Years Exp</div></div>
-    <div class="stat"><div class="stat-num">200+</div><div class="stat-lbl">Projects</div></div>
-    <div class="stat"><div class="stat-num">1B+</div><div class="stat-lbl">Total Views</div></div>
-  </div>
-</section>
+  <main>
+    <!-- ═══════════════ HERO SECTION ═══════════════ -->
+    <section id="hero">
+      <div class="hero-noise"></div>
+      <div class="hero-content">
+        <div class="hero-fraktur reveal">Sujal Kumar — The Craft of Moving Images</div>
+        
+        <h1 class="hero-name reveal">
+          SUJAL<br><em>Kumar</em>
+        </h1>
 
-<!-- ═══════════════ REEL ═══════════════ -->
-<section id="reel">
-  <div class="rule-line"><span class="rule-label">✦ &nbsp; II — Showreel &nbsp; ✦</span></div>
+        <div class="hero-divider reveal">
+          <div class="hero-div-text">Senior Video Editor &nbsp;·&nbsp; Motion Designer</div>
+        </div>
 
-  <div class="reel-intro reveal">
-    <div>
-      <h2 class="section-title">Selected<br><em>Works</em></h2>
-      <p class="reel-period">2021 — 2024</p>
-    </div>
-    <p class="reel-sub-text">A showcase of post-production craft across editing, motion design, 3D, colour, and sound — built for the world's leading technology brands.</p>
-  </div>
+        <p class="hero-tagline reveal">
+          Cinematic storyteller crafting high-impact visual narratives for global technology brands — shaping the digital identity of ASUS India &amp; Qualcomm Snapdragon.
+        </p>
 
-  <div class="reel-cards reveal">
-    <div class="reel-card">
-      <span class="rc-num">I</span>
-      <div class="rc-title">Premiere Pro</div>
-      <div class="rc-desc">End-to-end post-production pipeline, multicam workflows, and dynamic precision cutting.</div>
-      <div class="rc-tags">Speed Ramp · J-Cut · L-Cut · Optical Flow</div>
-    </div>
-    <div class="reel-card">
-      <span class="rc-num">II</span>
-      <div class="rc-title">After Effects</div>
-      <div class="rc-desc">Motion graphics, VFX compositing, and expression-driven animation systems.</div>
-      <div class="rc-tags">Kinetic Type · Trapcode · 3D Camera</div>
-    </div>
-    <div class="reel-card">
-      <span class="rc-num">III</span>
-      <div class="rc-title">DaVinci Resolve</div>
-      <div class="rc-desc">Cinematic colour grading, HDR mastering, and custom LUT design for film looks.</div>
-      <div class="rc-tags">Cinematic LUTs · HDR · Film Looks</div>
-    </div>
-    <div class="reel-card">
-      <span class="rc-num">IV</span>
-      <div class="rc-title">Blender 3D</div>
-      <div class="rc-desc">3D modelling, product visualisation, and animation for global tech campaigns.</div>
-      <div class="rc-tags">EEVEE · Cycles · Geometry Nodes</div>
-    </div>
-    <div class="reel-card">
-      <span class="rc-num">V</span>
-      <div class="rc-title">Motion Design</div>
-      <div class="rc-desc">Brand animation systems, UI motion, and social-first content strategy.</div>
-      <div class="rc-tags">Brand Systems · UI Anim · Reels</div>
-    </div>
-    <div class="reel-card">
-      <span class="rc-num">VI</span>
-      <div class="rc-title">Sound Design</div>
-      <div class="rc-desc">Spatial audio mixing and layered SFX in Adobe Audition.</div>
-      <div class="rc-tags">Spatial Audio · SFX · Mixing</div>
-    </div>
-  </div>
-</section>
+        <div class="hero-cta reveal">
+          <a href="#works" class="btn-gold magnetic-target">View Works</a>
+          <a href="#contact" class="btn-ghost magnetic-target">Get In Touch</a>
+        </div>
 
-<!-- ═══════════════ SKILLS ═══════════════ -->
-<section id="skills">
-  <div class="rule-line"><span class="rule-label" style="color:var(--sepia);">✦ &nbsp; III — Expert Stack &nbsp; ✦</span></div>
-
-  <div class="skills-layout">
-    <div class="skills-intro reveal">
-      <h2 class="section-title">3+ Years<br>of <em>Mastery</em></h2>
-      <p>A complete post-production toolkit forged through years of delivering for ASUS India, Qualcomm, and clients across global markets.</p>
-    </div>
-
-    <div class="skills-grid reveal">
-      <div class="skill-row" data-pct="98">
-        <span class="skill-name">Adobe Premiere Pro</span>
-        <div class="skill-track"><div class="skill-fill"></div></div>
-        <span class="skill-pct">98%</span>
+        <div class="hero-stats reveal">
+          <div class="stat">
+            <div class="stat-num" data-count="3">3+</div>
+            <div class="stat-lbl">Years Exp</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" data-count="200">200+</div>
+            <div class="stat-lbl">Projects</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" data-count="1000">1B+</div>
+            <div class="stat-lbl">Total Views</div>
+          </div>
+        </div>
       </div>
-      <div class="skill-row" data-pct="95">
-        <span class="skill-name">After Effects</span>
-        <div class="skill-track"><div class="skill-fill"></div></div>
-        <span class="skill-pct">95%</span>
+      
+      <div class="hero-scroll-indicator">
+        <span class="mouse-scroll">
+          <span class="wheel"></span>
+        </span>
+        <span class="indicator-text">Scroll to View</span>
       </div>
-      <div class="skill-row" data-pct="92">
-        <span class="skill-name">DaVinci Resolve</span>
-        <div class="skill-track"><div class="skill-fill"></div></div>
-        <span class="skill-pct">92%</span>
-      </div>
-      <div class="skill-row" data-pct="90">
-        <span class="skill-name">Blender 3D</span>
-        <div class="skill-track"><div class="skill-fill"></div></div>
-        <span class="skill-pct">90%</span>
-      </div>
-      <div class="skill-row" data-pct="94">
-        <span class="skill-name">Motion Design</span>
-        <div class="skill-track"><div class="skill-fill"></div></div>
-        <span class="skill-pct">94%</span>
-      </div>
-      <div class="skill-row" data-pct="88">
-        <span class="skill-name">Adobe Audition</span>
-        <div class="skill-track"><div class="skill-fill"></div></div>
-        <span class="skill-pct">88%</span>
-      </div>
-      <div class="skill-row" data-pct="97">
-        <span class="skill-name">Social / Short-Form</span>
-        <div class="skill-track"><div class="skill-fill"></div></div>
-        <span class="skill-pct">97%</span>
-      </div>
-      <div class="skill-row" data-pct="86">
-        <span class="skill-name">Photoshop</span>
-        <div class="skill-track"><div class="skill-fill"></div></div>
-        <span class="skill-pct">86%</span>
-      </div>
-      <div class="skill-row" data-pct="89">
-        <span class="skill-name">Project Direction</span>
-        <div class="skill-track"><div class="skill-fill"></div></div>
-        <span class="skill-pct">89%</span>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ═══════════════ EXPERIENCE ═══════════════ -->
-<section id="experience">
-  <div class="rule-line"><span class="rule-label">✦ &nbsp; IV — Career &nbsp; ✦</span></div>
+    <!-- ═══════════════ DUAL YOUTUBE THEATER SECTION ═══════════════ -->
+    <section id="works">
+      <div class="rule-line"><span class="rule-label">✦ &nbsp; I — SELECTED WORKS &nbsp; ✦</span></div>
 
-  <div class="exp-top reveal">
-    <h2 class="section-title">Work<br><em>History</em></h2>
-    <p class="exp-sub">Three years shaping how global technology brands communicate innovation through the craft of cinematic video.</p>
-  </div>
-
-  <div class="exp-list">
-    <div class="exp-item reveal">
-      <div class="exp-period">2023 — Present<br><div class="exp-badge">Current</div></div>
-      <div>
-        <div class="exp-co">ASUS India</div>
-        <div class="exp-role">Senior Video Editor &amp; Motion Designer</div>
-        <p class="exp-desc">Lead video editor for ASUS India's complete digital marketing ecosystem — product launches, social campaigns, and brand storytelling across all platforms. Cinematic-grade product films and motion design for India's largest tech audience.</p>
-      </div>
-      <div class="exp-tags-wrap">
-        <span class="exp-tag">Product Launches</span>
-        <span class="exp-tag">Brand Films</span>
-        <span class="exp-tag">Motion Graphics</span>
-        <span class="exp-tag">ROG Campaigns</span>
-      </div>
-    </div>
-
-    <div class="exp-item reveal">
-      <div class="exp-period">2022 — 2023<br><div class="exp-badge" style="border-color:var(--rule);color:var(--muted);">Global</div></div>
-      <div>
-        <div class="exp-co">Qualcomm</div>
-        <div class="exp-role">Senior Video Editor · Technology Campaigns</div>
-        <p class="exp-desc">High-profile tech campaign videos for Qualcomm's Snapdragon processor line — chip visualisation, 3D animated explainers, and developer content distributed across 20+ global markets.</p>
-      </div>
-      <div class="exp-tags-wrap">
-        <span class="exp-tag">Snapdragon</span>
-        <span class="exp-tag">3D Visualisation</span>
-        <span class="exp-tag">Global Delivery</span>
-      </div>
-    </div>
-
-    <div class="exp-item reveal">
-      <div class="exp-period">2020 — 2022<br><div class="exp-badge" style="border-color:var(--rule);color:var(--muted);">Freelance</div></div>
-      <div>
-        <div class="exp-co">Independent</div>
-        <div class="exp-role">Video Editor · Motion Artist</div>
-        <p class="exp-desc">Built professional foundations across broadcast editing, motion graphics, and colour science — serving fintech, e-commerce, and media clients.</p>
-      </div>
-      <div class="exp-tags-wrap">
-        <span class="exp-tag">Commercial Editing</span>
-        <span class="exp-tag">Brand Identity</span>
-        <span class="exp-tag">Post-Production</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ GEAR ═══════════════ -->
-<section id="gear">
-  <div class="rule-line"><span class="rule-label">✦ &nbsp; V — Workstation &nbsp; ✦</span></div>
-
-  <div class="gear-intro reveal">
-    <h2 class="section-title">The Machine<br><em>Behind</em> the Magic</h2>
-    <p class="gear-sub">A custom workstation engineered for 4K/8K post-production, real-time 3D rendering, and GPU-accelerated workflows.</p>
-  </div>
-
-  <div class="gear-grid reveal">
-    <div class="gear-cell">
-      <div class="gc-brand">AMD · Processor</div>
-      <div class="gc-name">Ryzen 9 7950X</div>
-      <div class="gc-spec">16C / 32T · 5.7GHz Boost · 5nm Zen4</div>
-    </div>
-    <div class="gear-cell">
-      <div class="gc-brand">NVIDIA · GPU</div>
-      <div class="gc-name">RTX 5070 Ti</div>
-      <div class="gc-spec">16GB GDDR7 · DLSS 4 · AV1 Encode</div>
-    </div>
-    <div class="gear-cell">
-      <div class="gc-brand">T-Force · Memory</div>
-      <div class="gc-name">32GB DDR5</div>
-      <div class="gc-spec">6400MHz · XMP 3.0 · 2×16GB</div>
-    </div>
-    <div class="gear-cell">
-      <div class="gc-brand">MSI · Motherboard</div>
-      <div class="gc-name">B850 Tomahawk</div>
-      <div class="gc-spec">AM5 · PCIe 5.0 · WiFi 7</div>
-    </div>
-    <div class="gear-cell">
-      <div class="gc-brand">NVMe · Storage</div>
-      <div class="gc-name">2TB Gen 4</div>
-      <div class="gc-spec">PCIe 4.0 · 7,000 MB/s Read</div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ ABOUT ═══════════════ -->
-<section id="about">
-  <div class="rule-line"><span class="rule-label" style="color:var(--sepia);">✦ &nbsp; VI — About &nbsp; ✦</span></div>
-
-  <div class="about-grid">
-    <div class="about-left reveal">
-      <h2 class="section-title">A Storyteller<br>by <em>Instinct</em></h2>
-      <p>A technician by craft — Sujal Kumar brings cinematic vision to every frame. Specialising in the intersection of technology and visual art, he has spent 3+ years shaping how global tech brands communicate innovation through video.</p>
-      <p>Currently Senior Video Editor at ASUS India, delivering cinematic-grade content for one of Asia's most recognisable technology brands.</p>
-
-      <div class="about-quote">
-        <p>"Every frame is a decision. Every cut is a statement. I don't just edit video — I engineer emotion through precision and purpose."</p>
-        <cite>— Sujal Kumar</cite>
+      <div class="reel-intro reveal">
+        <div class="reel-heading">
+          <h2 class="section-title">Selected<br><em>Works</em></h2>
+          <p class="reel-period">Esports & Gaming Documentaries · Est. 2021 — 2026</p>
+        </div>
+        <p class="reel-sub-text">
+          A showcase of high-end post-production projects edited and shaped for global gaming creators. Plays instantly in beautiful full widescreen display.
+        </p>
       </div>
 
-      <a href="/cdn-cgi/l/email-protection#1b686e717a777a7d6329285b7c767a727735787476" class="btn-gold">Get In Touch</a>
-    </div>
-
-    <div class="about-right reveal">
-      <table class="about-table">
-        <tr><td>Location</td><td>Jaipur, Rajasthan, India</td></tr>
-        <tr><td>Speciality</td><td>Video Editing · Motion Design · 3D</td></tr>
-        <tr><td>Experience</td><td>3+ Years, Senior Level</td></tr>
-        <tr><td>Current</td><td>ASUS India</td></tr>
-        <tr><td>Past</td><td>Qualcomm / Snapdragon</td></tr>
-        <tr><td>Projects</td><td>200+ Delivered</td></tr>
-        <tr><td>Views</td><td>1 Billion+</td></tr>
-      </table>
-
-      <div class="about-socials">
-        <a href="/cdn-cgi/l/email-protection#b8cbcdd2d9d4d9dec08a8bf8dfd5d9d1d496dbd7d5"><span class="__cf_email__" data-cfemail="1c6f69767d707d7a642e2f5c7b717d7570327f7371">[email&#160;protected]</span></a>
-        <a href="https://github.com/sujalafx23-ux" target="_blank">github.com/sujalafx23-ux</a>
-        <a href="https://www.linkedin.com/in/sujal-kumar-3a598732b/" target="_blank">linkedin / sujal-kumar</a>
+      <!-- PRODUCTION I -->
+      <div class="production-header reveal">
+        <div class="prod-tag-wrap">
+          <span class="prod-number">I</span>
+          <span class="prod-lbl">Watch my edited videos</span>
+        </div>
+        <h3 class="prod-title-serif">Esports Gameplay Showcase</h3>
       </div>
+
+      <div class="cinema-theater reveal">
+        <div class="theater-glow"></div>
+        <div class="theater-frame">
+          <div class="theater-screen">
+            <iframe src="https://www.youtube.com/embed/I0SMSCSldD4?rel=0&showinfo=0&controls=1" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- PRODUCTION II -->
+      <div class="production-header reveal" style="margin-top: 100px;">
+        <div class="prod-tag-wrap">
+          <span class="prod-number">II</span>
+          <span class="prod-lbl">Watch my edited videos</span>
+        </div>
+        <h3 class="prod-title-serif">Esports Cinematic Montage</h3>
+      </div>
+
+      <div class="cinema-theater reveal">
+        <div class="theater-glow"></div>
+        <div class="theater-frame">
+          <div class="theater-screen">
+            <iframe src="https://www.youtube.com/embed/j2MT6qutxdY?rel=0&showinfo=0&controls=1" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ EXPERT STACK & SKILLS ═══════════════ -->
+    <section id="skills">
+      <div class="rule-line"><span class="rule-label" style="color:var(--sepia);">✦ &nbsp; II — EXPERT STACK &nbsp; ✦</span></div>
+
+      <div class="skills-layout">
+        <div class="skills-intro reveal">
+          <h2 class="section-title">3+ Years<br>of <em>Mastery</em></h2>
+          <p>A comprehensive post-production toolkit forged through years of delivering commercial-grade content for ASUS India, Qualcomm Snapdragon, and regional creators.</p>
+          <div class="skills-decoration">
+            <div class="film-reel-icon"></div>
+          </div>
+        </div>
+
+        <div class="skills-grid reveal">
+          <div class="skill-row" data-pct="98">
+            <div class="skill-info">
+              <span class="skill-name">Adobe Premiere Pro</span>
+              <span class="skill-desc">End-to-End Pipeline &amp; Precision Cuts</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill"></div></div>
+            <span class="skill-pct">0%</span>
+          </div>
+
+          <div class="skill-row" data-pct="95">
+            <div class="skill-info">
+              <span class="skill-name">After Effects</span>
+              <span class="skill-desc">Motion Graphics, Compositing &amp; VFX</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill"></div></div>
+            <span class="skill-pct">0%</span>
+          </div>
+
+          <div class="skill-row" data-pct="92">
+            <div class="skill-info">
+              <span class="skill-name">DaVinci Resolve</span>
+              <span class="skill-desc">Cinematic Color Science &amp; HDR Grading</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill"></div></div>
+            <span class="skill-pct">0%</span>
+          </div>
+
+          <div class="skill-row" data-pct="94">
+            <div class="skill-info">
+              <span class="skill-name">Motion Design Systems</span>
+              <span class="skill-desc">Typography &amp; Fluid Brand Elements</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill"></div></div>
+            <span class="skill-pct">0%</span>
+          </div>
+
+          <div class="skill-row" data-pct="97">
+            <div class="skill-info">
+              <span class="skill-name">Social / Short-Form Editing</span>
+              <span class="skill-desc">High-Retention Viral Pacing Systems</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill"></div></div>
+            <span class="skill-pct">0%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ WORK HISTORY & TIMELINE ═══════════════ -->
+    <section id="experience">
+      <div class="rule-line"><span class="rule-label">✦ &nbsp; III — CAREER TIMELINE &nbsp; ✦</span></div>
+
+      <div class="exp-top reveal">
+        <h2 class="section-title">Work<br><em>History</em></h2>
+        <p class="exp-sub">Three years shaping how global technology brands communicate innovation through the craft of cinematic video.</p>
+      </div>
+
+      <div class="exp-list">
+        <div class="exp-item reveal">
+          <div class="exp-period">
+            <span>2023 — PRESENT</span>
+            <div class="exp-badge">Current</div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-co">ASUS India</div>
+            <div class="exp-role">Senior Video Editor &amp; Motion Designer</div>
+            <p class="exp-desc">Lead video editor for ASUS India's digital ecosystem. Orchestrate commercial product launches, social campaigns, and brand storytelling across all national platforms. Craft cinematic product films, audio mixing pipelines, and motion layouts.</p>
+          </div>
+          <div class="exp-tags-wrap">
+            <span class="exp-tag">Product Launches</span>
+            <span class="exp-tag">Brand Films</span>
+            <span class="exp-tag">Motion Graphics</span>
+            <span class="exp-tag">ROG Campaigns</span>
+          </div>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-period">
+            <span>2022 — 2023</span>
+            <div class="exp-badge history-badge">Global</div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-co">Qualcomm</div>
+            <div class="exp-role">Senior Video Editor · Technology Campaigns</div>
+            <p class="exp-desc">Designed high-profile campaigns for Qualcomm's Snapdragon processor line. Managed detailed micro-chip visuals, 3D animations, developer explainer materials, and commercial advertisements distributed in 20+ international markets.</p>
+          </div>
+          <div class="exp-tags-wrap">
+            <span class="exp-tag">Snapdragon Core</span>
+            <span class="exp-tag">3D Visualisation</span>
+            <span class="exp-tag">Global Delivery</span>
+            <span class="exp-tag">Explainer Video</span>
+          </div>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-period">
+            <span>2020 — 2022</span>
+            <div class="exp-badge history-badge">Freelance</div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-co">Independent Contractor</div>
+            <div class="exp-role">Video Editor · Motion Artist</div>
+            <p class="exp-desc">Established robust freelance systems across commercial post-production. Collaborated with agencies, gaming creators, fintech brands, and digital publishers to deliver high-retention video content and motion identity templates.</p>
+          </div>
+          <div class="exp-tags-wrap">
+            <span class="exp-tag">Esports Editing</span>
+            <span class="exp-tag">Brand Identity</span>
+            <span class="exp-tag">Post-Production</span>
+            <span class="exp-tag">LUT Creation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ WORKSTATION GEAR SPECIFICATIONS ═══════════════ -->
+    <section id="gear">
+      <div class="rule-line"><span class="rule-label">✦ &nbsp; IV — THE WORKSTATION &nbsp; ✦</span></div>
+
+      <div class="gear-intro reveal">
+        <h2 class="section-title">The Machine<br><em>Behind</em> the Magic</h2>
+        <p class="gear-sub">A high-performance custom-built hardware workstation optimized for real-time video rendering, 8K raw file scrubbing, and GPU-accelerated video rendering pipelines.</p>
+      </div>
+
+      <div class="gear-grid reveal">
+        <div class="gear-cell magnetic-target" data-info="16 Cores and 32 Threads pushing up to 5.7GHz boost clocks, handling heavy Adobe Premiere multicam rendering and encoding easily.">
+          <div class="gc-brand">AMD · PROCESSOR</div>
+          <div class="gc-name">Ryzen 9 7950X</div>
+          <div class="gc-spec">16C / 32T · 5.7GHz Boost · 5nm Zen4</div>
+        </div>
+        <div class="gear-cell magnetic-target" data-info="Packed with 16GB GDDR7 RAM, DLSS 4 frame generation, and dual AV1 encoders, speeding up DaVinci Resolve color pipelines and hardware encodes.">
+          <div class="gc-brand">NVIDIA · GPU</div>
+          <div class="gc-name">RTX 5070 Ti</div>
+          <div class="gc-spec">16GB GDDR7 · DLSS 4 · AV1 Encode</div>
+        </div>
+        <div class="gear-cell magnetic-target" data-info="High-bandwidth DDR5 system memory clocked at 6400MHz with custom profiles to handle active timelines and multi-app multitasking.">
+          <div class="gc-brand">T-FORCE · MEMORY</div>
+          <div class="gc-name">32GB DDR5</div>
+          <div class="gc-spec">6400MHz · XMP 3.0 · 2×16GB</div>
+        </div>
+        <div class="gear-cell magnetic-target" data-info="Sturdy MSI board featuring AM5 socket support, extreme PCIe 5.0 lanes, and fast WiFi 7 integration for huge asset downloads.">
+          <div class="gc-brand">MSI · MOTHERBOARD</div>
+          <div class="gc-name">B850 Tomahawk</div>
+          <div class="gc-spec">AM5 · PCIe 5.0 · WiFi 7</div>
+        </div>
+        <div class="gear-cell magnetic-target" data-info="PCIe Gen 4.0 system drives running read speeds up to 7,000 MB/s, removing scrubbing lag in raw footage files.">
+          <div class="gc-brand">NVME · STORAGE</div>
+          <div class="gc-name">2TB Gen 4</div>
+          <div class="gc-spec">PCIe 4.0 · 7,000 MB/s Read</div>
+        </div>
+      </div>
+
+      <!-- Gear Details Tooltip Hover Box -->
+      <div class="gear-tooltip" id="gearTooltip">Hover over elements for rendering details</div>
+    </section>
+
+    <!-- ═══════════════ BIOGRAPHY & DETAILS ═══════════════ -->
+    <section id="about">
+      <div class="rule-line"><span class="rule-label" style="color:var(--sepia);">✦ &nbsp; V — BIOGRAPHY &nbsp; ✦</span></div>
+
+      <div class="about-grid">
+        <div class="about-left reveal">
+          <h2 class="section-title">A Storyteller<br>by <em>Instinct</em></h2>
+          <p>A technician by craft and a storyteller by instinct — Sujal Kumar brings modern cinematic vision to every frame. Specializing in the intersection of high-tier technology and visual arts, he has spent over 3 years shaping how global tech brands communicate complex innovation.</p>
+          <p>Currently serving as Senior Video Editor at ASUS India, pushing brand storytelling boundaries and delivering high-fidelity commercials for one of Asia's most prominent technology leaders.</p>
+
+          <div class="about-quote">
+            <p>"Every frame is a choice. Every cut is a statement. I don't just assemble video — I engineer emotional arcs through mechanical precision."</p>
+            <cite>— Sujal Kumar</cite>
+          </div>
+        </div>
+
+        <div class="about-right reveal">
+          <table class="about-table">
+            <tbody>
+              <tr><td>Location</td><td>Jaipur, Rajasthan, India</td></tr>
+              <tr><td>Speciality</td><td>Video Editing · Motion Design</td></tr>
+              <tr><td>Experience</td><td>3+ Years, Senior Level</td></tr>
+              <tr><td>Current</td><td>ASUS India (Senior Editor)</td></tr>
+              <tr><td>Past</td><td>Qualcomm / Snapdragon Campaigns</td></tr>
+              <tr><td>Projects</td><td>200+ Commercial Files</td></tr>
+              <tr><td>Total Views</td><td>1 Billion+ Impressions</td></tr>
+            </tbody>
+          </table>
+
+          <div class="about-socials">
+            <a href="mailto:sujalafx23@gmail.com" class="magnetic-target">sujalafx23@gmail.com</a>
+            <a href="https://github.com/sujalafx23-ux" target="_blank" class="magnetic-target">github.com/sujalafx23-ux</a>
+            <a href="https://www.linkedin.com/in/sujal-kumar-3a598732b/" target="_blank" class="magnetic-target">linkedin.com/in/sujal-kumar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ CONTACT & ENQUIRY PORTAL ═══════════════ -->
+    <section id="contact">
+      <div class="rule-line"><span class="rule-label">✦ &nbsp; VI — GET IN TOUCH &nbsp; ✦</span></div>
+
+      <div class="contact-layout">
+        <div class="contact-info reveal">
+          <h2 class="section-title">Start a<br><em>Production</em></h2>
+          <p class="contact-sub">Available for senior-level brand editing consulting, high-end commercial projects, and spatial motion design roles.</p>
+          
+          <div class="direct-contact">
+            <div class="dc-item">
+              <span class="dc-lbl">General Email</span>
+              <a href="mailto:sujalafx23@gmail.com" class="dc-val magnetic-target">sujalafx23@gmail.com</a>
+            </div>
+            <div class="dc-item">
+              <span class="dc-lbl">Based In</span>
+              <span class="dc-val">Jaipur, Rajasthan, India</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Glassmorphic contact form -->
+        <div class="contact-form-wrap reveal">
+          <form class="contact-form" id="portfolioForm" action="#" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="formName">Your Name</label>
+                <input type="text" id="formName" name="name" required placeholder="John Doe"/>
+              </div>
+              <div class="form-group">
+                <label for="formEmail">Email Address</label>
+                <input type="email" id="formEmail" name="email" required placeholder="john@example.com"/>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="formSubject">Subject</label>
+              <input type="text" id="formSubject" name="subject" required placeholder="ROG Campaign / Commercial Project"/>
+            </div>
+
+            <div class="form-group">
+              <label for="formMessage">Brief Production Scope</label>
+              <textarea id="formMessage" name="message" required placeholder="Tell me about your editing scope, timeline, and video deliverables..." rows="5"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn btn-gold magnetic-target" id="formSubmitBtn">
+              <span>Send Message</span>
+            </button>
+            <div class="form-status" id="formStatus"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <div class="footer-brand">Sujal Kumar</div>
+      <div class="footer-copy">© 2026 · All Rights Reserved · Jaipur, India</div>
     </div>
-  </div>
-</section>
+    
+    <div class="footer-links">
+      <a href="mailto:sujalafx23@gmail.com" class="magnetic-target">Email</a>
+      <a href="https://github.com/sujalafx23-ux" target="_blank" class="magnetic-target">GitHub</a>
+      <a href="https://www.linkedin.com/in/sujal-kumar-3a598732b/" target="_blank" class="magnetic-target">LinkedIn</a>
+    </div>
+  </footer>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-brand">Sujal Kumar</div>
-  <div class="footer-copy">© 2024 · All Rights Reserved · Jaipur, India</div>
-  <div class="footer-links">
-    <a href="/cdn-cgi/l/email-protection#fb888e919a979a9d83c9c8bb9c969a9297d5989496">Email</a>
-    <a href="https://github.com/sujalafx23-ux" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/sujal-kumar-3a598732b/" target="_blank">LinkedIn</a>
-  </div>
-</footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-/* Mobile Menu */
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
-const mobileClose = document.getElementById('mobileClose');
-hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
-mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
-document.querySelectorAll('.mm-lnk').forEach(a => {
-  a.addEventListener('click', () => mobileMenu.classList.remove('open'));
-});
-
-/* Scroll Reveal */
-const reveals = document.querySelectorAll('.reveal');
-const ro = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('in'), i * 80);
-      ro.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.12 });
-reveals.forEach(el => ro.observe(el));
-
-/* Skill Bars */
-const skillRows = document.querySelectorAll('.skill-row');
-const skillObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      const fill = e.target.querySelector('.skill-fill');
-      const pct  = e.target.dataset.pct;
-      if (fill && pct) fill.style.width = pct + '%';
-      skillObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.3 });
-skillRows.forEach(el => skillObs.observe(el));
-</script>
+  <script src="script.js"></script>
 </body>
 </html>
